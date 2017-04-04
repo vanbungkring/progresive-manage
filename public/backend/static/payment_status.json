@@ -1,0 +1,16 @@
+[{
+    "name": "UNCONFIRMED PAYMENT",
+    "data": "UNCONFIRMED PAYMENT"
+}, {
+    "name": "PAYMENT PROOF RECEIVED",
+    "data": "PAYMENT PROOF RECEIVED",
+}, {
+    "name": "PAYMENT PROOF NOT VALID",
+    "data": "PAYMENT PROOF NOT VALID",
+}, {
+    "name": "PAYMENT PROCESSED",
+    "data": "PAYMENT PROCESSED",
+}, {
+    "name": "PAYMENT APPROVED",
+    "data": "PAYMENT APPROVED",
+}]

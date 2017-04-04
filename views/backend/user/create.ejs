@@ -1,0 +1,55 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+
+<% if ( typeof message!='undefined' && message.length>0) { %>
+  <div class="alert alert-<%=message[0].status%>" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%=message[0].message%>
+  </div>
+<% } %>
+
+<div class="wrapper-md">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="row">
+                        <div class="col-md-12">
+                          <%if(self!=true){%>
+                            <div class="form-group">
+                                <label>Peran</label>
+                                <select required ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" id="userRoleSelect" name="role">
+                                  <option value=""></option>
+                                </select>
+                            </div>
+                          <%}%>
+                            <div class="form-group">
+                                <label>Nama Depan</label>
+                                <input type="text" class="form-control hidden" placeholder="Donation Name" name="_id" value="<%=typeof data.data!='undefined' && data.data._id?data.data._id:''%>">
+                                <input type="text" class="form-control" required name="firstName" required value="<%=data.data?data.data.firstName:''%>">
+                            </div>
+                            <div class="form-group">
+                                <label>Nama Belakang</label>
+                                <input type="text" class="form-control" required name="lastName" required value="<%=data.data?data.data.lastName:''%>">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" required name="email" required value="<%=data.data?data.data.email:''%>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var selectedRole = <%- typeof data.data!='undefined' && data.data.role ? JSON.stringify(data.data.role)+';' : '"";' %>
+</script>

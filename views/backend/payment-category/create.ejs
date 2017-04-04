@@ -1,0 +1,60 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" id="form" method="POST" ui-jq="parsley">
+                    <div class="form-group">
+                        <label>Nama Jenis Pembayaran</label>
+                        <input type="text" class="form-control hidden" placeholder="Donation Name" name="_id" value="<%=typeof data.data!='undefined' && data.data._id?data.data._id:''%>">
+                        <input type="text" class="form-control" name="name" required value="<%=data.data?data.data.name:''%>">
+                    </div>
+                    <div class="form-group">
+                        <label>Minimum Transaksi</label>
+                        <input type="number" class="form-control" name="minimumPayment" required value="<%=typeof data.data!='undefined' && data.data.minimum?data.data.minimum:''%>">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="checkbox-inline i-checks">
+                                <input type="checkbox" name="type" <%=typeof data.data!='undefined' && data.data.type==1?"checked":""%>>
+                                <i></i>Apakah pembayaran ini untuk kategori zakat?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12" id="bankAvail">
+                          <div class="form-group">
+                              <label>Pilih Akun Bank</label>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Keterangan</label>
+                            <textarea name="description" class="form-control" rows="5"><%=typeof data.data!='undefined' && data.data.description?data.data.description:''%></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <legend>Status</legend>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="checkbox-inline i-checks">
+                                <input type="checkbox" name="status" <%=typeof data.data!='undefined' && data.data.status>=1? 'checked':''%>>
+                                <i></i>Aktifkan methode pembayaran
+                            </label>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var selectedBankArray = <%- typeof data.data!='undefined' && data.data.bank ? JSON.stringify(data.data.bank)+';' : '"";' %>
+</script>

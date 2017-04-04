@@ -1,0 +1,30 @@
+## Customize the test machine
+machine:
+  node:
+    version: 6.9.1
+
+
+## Customize dependencies
+dependencies:
+ cache_directories:
+   - mongodb-linux-x86_64-2.4.14
+ pre:
+   - if [[ ! -d mongodb-linux-x86_64-2.4.14 ]]; then wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.4.14.tgz && tar xvzf mongodb-linux-x86_64-2.4.14.tgz; fi
+   - sudo /etc/init.d/mongodb stop
+   - sudo cp mongodb-linux-x86_64-2.4.14/bin/* /usr/bin
+   - sudo /etc/init.d/mongodb start
+
+## Deployment scripts to upload code to RH and Deploy
+deployment:
+ development:
+   branch: dev
+   commands:
+     - npm i -g fh-fhc@latest-2
+     - fhc target $FH_DOMAIN
+     - fhc login $FH_USER $FH_PASS
+     - fhc fhcfg set fhversion 3
+     - fhc fhcfg set version 3
+     - git fetch --unshallow
+     - git push $FH_GIT_URL $CIRCLE_SHA1:refs/heads/dev
+     - fhc git pull $FH_CLOUD_APP_ID --clean
+     - fhc app stage --app=$FH_CLOUD_APP_ID --env=rh-dev --runtime=node010 --clean=true --gitRef.type=branch --gitRef.hash=HEAD --gitRef.value=dev

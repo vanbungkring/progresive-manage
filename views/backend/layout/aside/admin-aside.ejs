@@ -1,0 +1,122 @@
+<!-- aside -->
+<aside id="aside" class="app-aside hidden-xs bg-dark">
+    <div class="aside-wrap">
+        <div class="navi-wrap">
+            <!-- user -->
+
+            <!-- / user -->
+
+            <!-- nav -->
+            <nav ui-nav class="navi clearfix">
+                <ul class="nav">
+                    <li class="hide hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span>Navigasi</span>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['dashboard'], state) : '' %>">
+                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/dashboard">
+                            <i class="glyphicon glyphicon-stats icon <%= locals.state ? isActive(['dashboard'], state, 'text-primary-dker') : '' %>"></i>
+                            <span class="font-bold">Dasbor</span>
+                        </a>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['campaign', 'categories'], state) : '' %>">
+                        <a href class="auto">
+                            <span class="pull-right text-muted">
+                                <i class="fa fa-fw fa-angle-right text"></i>
+                                <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                            <i class="glyphicon glyphicon-th <%= locals.state ? isActive(['campaign', 'categories'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Konten</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                            <li class="<%= locals.state ? isActive(['campaign'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/campaign">
+                                    <span>Campaign</span>
+                                </a>
+                            </li>
+                            <li class="<%= locals.state ? isActive(['categories'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/categories">
+                                    <span>Kategori</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['paymenttype', 'bankaccount'], state) : '' %>">
+                        <a href class="auto">
+                            <span class="pull-right text-muted">
+                                <i class="fa fa-fw fa-angle-right text"></i>
+                                <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                            <i class="glyphicon glyphicon-briefcase icon <%= locals.state ? isActive(['paymenttype', 'bankaccount'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Pengaturan Donasi</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                            <li class="<%= locals.state ? isActive(['paymenttype'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/payment/category">
+                                    <span>Jenis Pembayaran</span>
+                                </a>
+                            </li>
+                            <li class="<%= locals.state ? isActive(['bankaccount'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/payment/account">
+                                    <span>Akun Bank</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['paid', 'unpaid', 'confirmpayment'], state) : '' %>">
+                        <a href class="auto">
+                            <span class="pull-right text-muted">
+                                <i class="fa fa-fw fa-angle-right text"></i>
+                                <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                            <i class="glyphicon glyphicon-briefcase icon <%= locals.state ? isActive(['paid', 'unpaid', 'confirmpayment'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Transaksi</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                          <li class="<%= locals.state ? isActive(['unpaid'], state) : '' %>">
+                              <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/payment/unpaid">
+                                  <span>Internal Donation</span>
+                              </a>
+                          </li>
+                            <li class="<%= locals.state ? isActive(['unpaid'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/payment/unpaid">
+                                    <span>Pembayaran Tertunda</span>
+                                </a>
+                            </li>
+                            <li class="<%= locals.state ? isActive(['paid'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/payment/paid">
+                                    <span>Pembayaran Lunas</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="<%= locals.state ? isActive(['submerchant'], state) : '' %>">
+                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/submerchant" class="">
+                            <i class="glyphicon glyphicon-list <%= locals.state ? isActive(['submerchant'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Submerchant</span>
+                        </a>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['report'], state) : '' %>">
+                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/submerchant" class="">
+                            <i class="glyphicon glyphicon-list <%= locals.state ? isActive(['report'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Laporan</span>
+                        </a>
+                    </li> -->
+                    <li class="<%= locals.state ? isActive(['donot'], state) : '' %>">
+                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/donor" class="">
+                            <i class="glyphicon glyphicon-user <%= locals.state ? isActive(['donor'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Donatur</span>
+                        </a>
+                    </li>
+                    <li class="<%= locals.state ? isActive(['user'], state) : '' %>">
+                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/user">
+                            <i class="glyphicon glyphicon-signal <%= locals.state ? isActive(['user'], state, 'text-primary-dker') : '' %>"></i>
+                            <span>Pengguna</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- / aside footer -->
+        </div>
+    </div>
+</aside>

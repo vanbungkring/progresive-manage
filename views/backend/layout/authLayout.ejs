@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zispro LOGIN</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/backend/css/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/backend/css/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/backend/css/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+
+    <link rel="stylesheet" href="/backend/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="/backend/css/app.min.css" type="text/css" />
+
+</head>
+
+<body>
+    <div class="app app-header-fixed ">
+        <%- body %>
+    </div>
+    <script>
+        var public_access = <%- JSON.stringify(public_access) %>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/backend/js/app.src.js"></script>
+</body>
+
+</html>

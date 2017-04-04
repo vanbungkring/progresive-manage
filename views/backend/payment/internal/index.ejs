@@ -1,0 +1,109 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-lg-7 col-md-10 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form id="post" data-parsley-validate="" role="form" method="POST" novalidate="">
+                    <input type="hidden" class="form-control hidden" id="submerchantID" name="creator" value="5720d950d97495cb3b019ebd">
+
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                            <label>Date</label>
+                            <div id="dpIqamaDate" class="input-group date">
+                                <input type="text" class="form-control" placeholder="mm/dd/yyyy" name="createdAt" required="" value="">
+                                <span class="input-group-addon">
+                                              <span class="fa fa-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Amount ($)</label>
+                            <input class="form-control" name="amount" placeholder="Enter amount" data-parsley-required-message="Please enter amount." required="" type="tel" value="">
+                        </div>
+                        <div class="col-sm-4 select2-parsley">
+                            <label>Source of Fund</label>
+                            <select class="form-control select2-hidden-accessible" id="sourceFund" name="sourceFund" value="" required="" data-parsley-required-message="Please select source of fund." tabindex="-1" aria-hidden="true">
+                                            <option value="" disabled="" selected="">Select Source of Fund</option>
+                                            <option value="card - American Express">Card - American Express</option>
+                                            <option value="card - Diners Club">Card - Diners Club</option>
+                                            <option value="card - Discover">Card - Discover</option>
+                                            <option value="card - JCB">Card - JCB</option>
+                                            <option value="card - Mastercard">Card - Mastercard</option>
+                                            <option value="card - Visa">Card - Visa</option>
+                                            <option value="cash">Cash</option>
+                                            <option value="check">Check</option>
+                                            <option value="pledge">Pledge</option>
+                                          </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 161px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sourceFund-container"><span class="select2-selection__rendered" id="select2-sourceFund-container"><span class="select2-selection__placeholder">Select source of fund</span></span>
+                            <span
+                                class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                </span>
+                                </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-sm-6">
+                            <label>Name</label>
+                            <input class="form-control" name="name" placeholder="Enter donor's name" data-parsley-required-message="Please enter donor's name." required="" type="text" value="">
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Email (optional)</label><br>
+                            <!-- <small></small> -->
+                            <input class="form-control" name="email" placeholder="Enter donor's email for receipt" data-parsley-required-message="Please enter donor's email for receipt." type="email" value="">
+                            <i class="fa fa-info-circle custom-popover" title="" data-toggle="popover" data-placement="bottom" data-content="If your donor has registered with MasjidPay app, he/she can see this donation in donation history from the app." data-original-title=""></i>
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-sm-6 select2-parsley">
+                            <label>Payment Name</label>
+                            <select class="form-control select2-hidden-accessible" id="paymentType" name="paymentType" value="" required="" data-parsley-required-message="Please select payment name." tabindex="-1" aria-hidden="true">
+                                            <option value="" disabled="" selected="">Select Payment Name</option>
+                                          <option value="577d1a236095bc4f489779d8">Finn Rush</option><option value="571c014827f7bdb98959d93e">General Fund</option><option value="571c01b727f7bdb98959d940">Infaq</option></select>
+                            <span
+                                class="select2 select2-container select2-container--default" dir="ltr" style="width: 256px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-paymentType-container"><span class="select2-selection__rendered" id="select2-paymentType-container"><span class="select2-selection__placeholder">Select payment name</span></span>
+                                <span
+                                    class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                    </span>
+                                    </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                        <div class="projectName col-sm-6 select2-parsley hide">
+                            <label>Project Name</label>
+                            <select class="form-control select2-hidden-accessible" id="projectName" name="projectName" value="" data-parsley-required-message="Please select project name." tabindex="-1" aria-hidden="true">
+                                            <option value="" disabled="" selected="">Select Project Name</option>
+                                          <option value="57730054c1a34565073eb1bf">Nulla sed deleniti elit similique fuga Tempora alias ad sed sit aliqua</option><option value="57d58336313b9415a2eca711">Test Donation</option><option value="57d9aa84f6709d0249d0a016">istiqlal: Project/Fundraising</option></select>
+                            <span
+                                class="select2 select2-container select2-container--default" dir="ltr" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-projectName-container"><span class="select2-selection__rendered" id="select2-projectName-container"><span class="select2-selection__placeholder">Select project name</span></span>
+                                <span
+                                    class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                    </span>
+                                    </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Remarks (optional)</label>
+                        <textarea class="form-control" name="remarks" placeholder="Enter donation remarks" rows="3"></textarea>
+                    </div>
+
+                    <legend></legend>
+
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <input class="btn btn-lg btn-warning btn-block" id="submitPost" type="button" value="Add Internal Donation">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- END panel-->
+        </div>
+
+    </div>
+
+</div>

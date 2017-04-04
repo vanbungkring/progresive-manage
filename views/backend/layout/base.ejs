@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="" ui-jq='zispro'>
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        <%=title?title:'ZISPRO'%> | Zakat Service</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/backend/css/app.min.css" type="text/css" />
+
+</head>
+
+<body>
+    <div class="app app-header-fixed ">
+        <% include header.ejs %>
+            <%if(user_active.role==='superadmin'){%>
+                <% include aside/superadmin-aside.ejs %>
+                    <%}else if(user_active.role==='admin'){%>
+                        <% include aside/admin-aside.ejs %>
+                            <%}else{%>
+                                <% include aside/private-aside.ejs %>
+                                    <%}%>
+                                        <div id="content" class="app-content" role="main">
+                                            <div class="app-content-body ">
+                                                <%- body %>
+                                            </div>
+                                            <% include footer.ejs %>
+                                        </div>
+                                        <script>
+                                            var user_active = <%- JSON.stringify(user_active) %>
+                                            var public_access = <%- JSON.stringify(public_access) %>
+                                        </script>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                                        <script src="/backend/js/app.src.js"></script>
+
+
+</body>
+
+</html>

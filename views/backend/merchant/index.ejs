@@ -1,0 +1,64 @@
+<div class="bg-light lter b-b wrapper-md">
+  <span class="btn-group pull-right">
+      <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/submerchant/add" class="btn btn-default btn-sm btn-success">TAMBAH SUBMERCHANT</a>
+  </span>
+    <h1 class="m-n font-thin h3"><%= title %></h1>
+</div>
+
+<% if ( typeof message!='undefined' && message.length>0) { %>
+  <div class="alert alert-<%=message[0].status%>" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%=message[0].message%>
+  </div>
+<% } %>
+
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading hide">
+            <%= title %>
+        </div>
+        <div class="table-responsive">
+            <table id="table" ui-jq="dataTable" ui-options="{order: [[ 0, 'asc' ]], language: {url: 'http://cdn.datatables.net/plug-ins/1.10.13/i18n/Indonesian.json'}}" class="table table-striped b-t b-b">
+                <thead>
+                    <tr>
+                        <th>Submerchant Name</th>
+                        <th>Phone Number</th>
+                        <th>Contact Person</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th class="no-sort">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(merchant) { %>
+                        <tr>
+                            <td><%=merchant.name%></td>
+                            <td><%=merchant.contact.phoneNumber%></td>
+                            <td><%=merchant.contactPerson.firstName%></td>
+                            <td><%=merchant.contact.email%></td>
+                            <td><%=merchant.status?'Active':'Inactive'%></td>
+                            <td>
+                                <div class="btn-group dropdown">
+                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="caret"></span>
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="submerchant/edit/<%=merchant._id%>">Ubah</a>
+                                        </li>
+                                        <li>
+                                            <a href=""><span class="text-danger">Hapus</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

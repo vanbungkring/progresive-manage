@@ -1,0 +1,75 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-sm-8">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="form-group">
+                        <label>Organinzation name</label>
+                        <input required type="text" class="form-control" name="name" value="<%= data.name ? data.name : '' %>">
+                        <input type="text" class="form-control hidden" name="_id" value="<%= data._id ? data._id : '' %>">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Phone Number</label>
+                            <input required type="text" class="form-control" name="phoneNumber" value="<%= typeof data.contact!='undefined' && data.contact.phoneNumber ? data.contact.phoneNumber : '' %>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Website</label>
+                            <input type="text" class="form-control" name="website" value="<%= typeof data.contact!='undefined' && data.contact.website ? data.contact.website : '' %>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Email</label>
+                            <input required type="text" class="form-control" name="email" value="<%= typeof data.contact!='undefined' && data.contact.email ? data.contact.email : '' %>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <textarea required class="form-control" rows="3" name="address"><%= typeof data.address!='undefined' && data.address.address ? data.address.address : '' %></textarea>
+                    </div>
+                    <legend>Orang yang dapat dihubungi</legend>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Nama Depan</label>
+                            <input required type="text" class="form-control" name="contactFirstname" value="<%= typeof data.contactPerson!='undefined' && data.contactPerson.firstName ? data.contactPerson.firstName : '' %>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Nama Belakang</label>
+                            <input required type="text" class="form-control" name="contactLastname" value="<%= typeof data.contactPerson!='undefined' && data.contactPerson.lastName ? data.contactPerson.lastName : '' %>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input required type="text" class="form-control" name="contactEmail" value="<%= typeof data.contactPerson!='undefined' && data.contactPerson.email ? data.contactPerson.email : '' %>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Nomor Telepon</label>
+                            <input required type="text" class="form-control" name="contactPhoneNumber" value="<%= typeof data.contactPerson!='undefined' && data.contactPerson.phoneNumber ? data.contactPerson.phoneNumber : '' %>">
+                        </div>
+                    </div>
+                    <legend>Status Akun</legend>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="checkbox-inline i-checks">
+                                <input type="checkbox" name="status" <%= typeof data.status!='undefined' && data.status ? 'checked' : '' %>>
+                                <i></i>Aktifkan merchant</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Diskon</label>
+                            <input required type="number" class="form-control" name="discount" value="<%= data.discount ? data.discount : '' %>">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <a class="btn m-b-xs btn-sm btn-primary btn-addon" id="uploadMerchantLogo" ui-jq="cloudinary" ui-options=""><i class="fa fa-plus"></i>Unggah Logo</a>
+    </div>
+</div>

@@ -1,0 +1,541 @@
+[{
+    "name": "BANK BRI",
+    "code": "002",
+    "short_name": "BANK_BRI"
+}, {
+    "name": "BANK EKSPOR INDONESIA",
+    "code": "003",
+    "short_name": "BANK_EKSPOR_INDONESIA"
+}, {
+    "name": "BANK MANDIRI",
+    "code": "008",
+    "short_name": "BANK_MANDIRI"
+}, {
+    "name": "BANK BNI",
+    "code": "009",
+    "short_name": "BANK_BNI"
+}, {
+    "name": "BANK DANAMON",
+    "code": "011",
+    "short_name": "BANK_DANAMON"
+}, {
+    "name": "PERMATA BANK",
+    "code": "013",
+    "short_name": "BANK_PERMATA"
+}, {
+    "name": "BANK BCA",
+    "code": "014",
+    "short_name": "BANK_BCA"
+}, {
+    "name": "BANK BII",
+    "code": "016",
+    "short_name": "BANK_BII"
+}, {
+    "name": "BANK PANIN",
+    "code": "019",
+    "short_name": "BANK_PANIN"
+}, {
+    "name": "BANK ARTA NIAGA KENCANA",
+    "code": "020",
+    "short_name": "BANK_ARTA_NIAGA_KENCANA"
+}, {
+    "name": "BANK NIAGA",
+    "code": "022",
+    "short_name": "BANK_NIAGA"
+}, {
+    "name": "BANK BUANA IND",
+    "code": "023",
+    "short_name": "BANK_BUANA_IND"
+}, {
+    "name": "BANK LIPPO",
+    "code": "026",
+    "short_name": "BANK_LIPPO"
+}, {
+    "name": "BANK NISP",
+    "code": "028",
+    "short_name": "BANK_NISP"
+}, {
+    "name": "AMERICAN EXPRESS BANK LTD",
+    "code": "030",
+    "short_name": "AMERICAN_EXPRESS_BANK_LTD"
+}, {
+    "name": "CITIBANK NA",
+    "code": "031",
+    "short_name": "CITIBANK"
+}, {
+    "name": "JP MORGAN CHASE BANK, NA",
+    "code": "032",
+    "short_name": "JP_MORGAN_CHASE_BANK"
+}, {
+    "name": "BANK OF AMERICA, NA",
+    "code": "033",
+    "short_name": "BANK_OF_AMERICA,_NA"
+}, {
+    "name": "ING INDONESIA BANK",
+    "code": "034",
+    "short_name": "ING_INDONESIA_BANK"
+}, {
+    "name": "BANK MULTICOR TBK",
+    "code": "036",
+    "short_name": "BANK_MULTICOR_TBK"
+}, {
+    "name": "BANK ARTHA GRAHA",
+    "code": "037",
+    "short_name": "BANK_ARTHA_GRAHA"
+}, {
+    "name": "BANK CREDIT AGRICOLE INDOSUEZ",
+    "code": "039",
+    "short_name": "BANK_CREDIT_AGRICOLE_INDOSUEZ"
+}, {
+    "name": "THE BANGKOK BANK COMP LTD",
+    "code": "040",
+    "short_name": "THE_BANGKOK_BANK_COMP_LTD"
+}, {
+    "name": "THE HONGKONG & SHANGHAI BC",
+    "code": "041",
+    "short_name": "THE_HONGKONG_&_SHANGHAI_BC"
+}, {
+    "name": "THE BANK OF TOKYO MITSUBISHI UFJ LTD",
+    "code": "042",
+    "short_name": "THE_BANK_OF_TOKYO_MITSUBISHI_UFJ_LTD"
+}, {
+    "name": "BANK SUMITOMO MITSUI INDONESIA",
+    "code": "045",
+    "short_name": "BANK_SUMITOMO_MITSUI_INDONESIA"
+}, {
+    "name": "BANK DBS INDONESIA",
+    "code": "046",
+    "short_name": "BANK_DBS_INDONESIA"
+}, {
+    "name": "BANK RESONA PERDANIA",
+    "code": "047",
+    "short_name": "BANK_RESONA_PERDANIA"
+}, {
+    "name": "BANK MIZUHO INDONESIA",
+    "code": "048",
+    "short_name": "BANK_MIZUHO_INDONESIA"
+}, {
+    "name": "STANDARD CHARTERED BANK",
+    "code": "050",
+    "short_name": "STANDARD_CHARTERED_BANK"
+}, {
+    "name": "BANK ABN AMRO",
+    "code": "052",
+    "short_name": "BANK_ABN_AMRO"
+}, {
+    "name": "BANK KEPPEL TATLEE BUANA",
+    "code": "053",
+    "short_name": "BANK_KEPPEL_TATLEE_BUANA"
+}, {
+    "name": "BANK CAPITAL INDONESIA, TBK",
+    "code": "054",
+    "short_name": "BANK_CAPITAL_INDONESIA,-TBK"
+}, {
+    "name": "BANK BNP PARIBAS INDONESIA",
+    "code": "057",
+    "short_name": "BANK_BNP_PARIBAS_INDONESIA"
+}, {
+    "name": "BANK UOB INDONESIA",
+    "code": "058",
+    "short_name": "BANK_UOB_INDONESIA"
+}, {
+    "name": "KOREA EXCHANGE BANK DANAMON",
+    "code": "059",
+    "short_name": "KOREA_EXCHANGE_BANK_DANAMON"
+}, {
+    "name": "RABOBANK INTERNASIONAL INDONESIA",
+    "code": "060",
+    "short_name": "RABOBANK_INTERNASIONAL_INDONESIA"
+}, {
+    "name": "ANZ PANIN BANK",
+    "code": "061",
+    "short_name": "ANZ_PANIN_BANK"
+}, {
+    "name": "DEUTSCHE BANK AG",
+    "code": "067",
+    "short_name": "DEUTSCHE_BANK_AG"
+}, {
+    "name": "BANK WOORI INDONESIA",
+    "code": "068",
+    "short_name": "BANK_WOORI_INDONESIA"
+}, {
+    "name": "BANK OF CHINA LIMITED",
+    "code": "069",
+    "short_name": "BANK_OF_CHINA_LIMITED"
+}, {
+    "name": "BANK BUMI ARTA",
+    "code": "076",
+    "short_name": "BANK_BUMI_ARTA"
+}, {
+    "name": "BANK EKONOMI",
+    "code": "087",
+    "short_name": "BANK_EKONOMI"
+}, {
+    "name": "BANK ANTARDAERAH",
+    "code": "088",
+    "short_name": "BANK_ANTARDAERAH"
+}, {
+    "name": "BANK HAGA",
+    "code": "089",
+    "short_name": "BANK_HAGA"
+}, {
+    "name": "BANK IFI",
+    "code": "093",
+    "short_name": "BANK_IFI"
+}, {
+    "name": "BANK CENTURY, TBK",
+    "code": "095",
+    "short_name": "BANK_CENTURY,_TBK"
+}, {
+    "name": "BANK MAYAPADA",
+    "code": "097",
+    "short_name": "BANK_MAYAPADA"
+}, {
+    "name": "BANK JABAR",
+    "code": "110",
+    "short_name": "BANK_JABAR"
+}, {
+    "name": "BANK DKI",
+    "code": "111",
+    "short_name": "BANK_DKI"
+}, {
+    "name": "BPD DIY",
+    "code": "112",
+    "short_name": "BPD_DIY"
+}, {
+    "name": "BANK JATENG",
+    "code": "113",
+    "short_name": "BANK_JATENG"
+}, {
+    "name": "BANK JATIM",
+    "code": "114",
+    "short_name": "BANK_JATIM"
+}, {
+    "name": "BPD JAMBI",
+    "code": "115",
+    "short_name": "BPD_JAMBI"
+}, {
+    "name": "BPD ACEH",
+    "code": "116",
+    "short_name": "BPD_ACEH"
+}, {
+    "name": "BANK SUMUT",
+    "code": "117",
+    "short_name": "BANK_SUMUT"
+}, {
+    "name": "BANK NAGARI",
+    "code": "118",
+    "short_name": "BANK_NAGARI"
+}, {
+    "name": "BANK RIAU",
+    "code": "119",
+    "short_name": "BANK_RIAU"
+}, {
+    "name": "BANK SUMSEL",
+    "code": "120",
+    "short_name": "BANK_SUMSEL"
+}, {
+    "name": "BANK LAMPUNG",
+    "code": "121",
+    "short_name": "BANK_LAMPUNG"
+}, {
+    "name": "BPD KALSEL",
+    "code": "122",
+    "short_name": "BPD_KALSEL"
+}, {
+    "name": "BPD KALIMANTAN BARAT",
+    "code": "123",
+    "short_name": "BPD_KALIMANTAN_BARAT"
+}, {
+    "name": "BPD KALTIM",
+    "code": "124",
+    "short_name": "BPD_KALTIM"
+}, {
+    "name": "BPD KALTENG",
+    "code": "125",
+    "short_name": "BPD_KALTENG"
+}, {
+    "name": "BPD SULSEL",
+    "code": "126",
+    "short_name": "BPD_SULSEL"
+}, {
+    "name": "BANK SULUT",
+    "code": "127",
+    "short_name": "BANK_SULUT"
+}, {
+    "name": "BPD NTB",
+    "code": "128",
+    "short_name": "BPD_NTB"
+}, {
+    "name": "BPD BALI",
+    "code": "129",
+    "short_name": "BPD_BALI"
+}, {
+    "name": "BANK NTT",
+    "code": "130",
+    "short_name": "BANK_NTT"
+}, {
+    "name": "BANK MALUKU",
+    "code": "131",
+    "short_name": "BANK_MALUKU"
+}, {
+    "name": "BPD PAPUA",
+    "code": "132",
+    "short_name": "BPD_PAPUA"
+}, {
+    "name": "BANK BENGKULU",
+    "code": "133",
+    "short_name": "BANK_BENGKULU"
+}, {
+    "name": "BPD SULAWESI TENGAH",
+    "code": "134",
+    "short_name": "BPD_SULAWESI_TENGAH"
+}, {
+    "name": "BANK SULTRA",
+    "code": "135",
+    "short_name": "BANK_SULTRA"
+}, {
+    "name": "BANK NUSANTARA PARAHYANGAN",
+    "code": "145",
+    "short_name": "BANK_NUSANTARA_PARAHYANGAN"
+}, {
+    "name": "BANK SWADESI",
+    "code": "146",
+    "short_name": "BANK_SWADESI"
+}, {
+    "name": "BANK MUAMALAT",
+    "code": "147",
+    "short_name": "BANK_MUAMALAT"
+}, {
+    "name": "BANK MESTIKA",
+    "code": "151",
+    "short_name": "BANK_MESTIKA"
+}, {
+    "name": "BANK METRO EXPRESS",
+    "code": "152",
+    "short_name": "BANK_METRO_EXPRESS"
+}, {
+    "name": "BANK SHINTA INDONESIA",
+    "code": "153",
+    "short_name": "BANK_SHINTA_INDONESIA"
+}, {
+    "name": "BANK MASPION",
+    "code": "157",
+    "short_name": "BANK_MASPION"
+}, {
+    "name": "BANK HAGAKITA",
+    "code": "159",
+    "short_name": "BANK_HAGAKITA"
+}, {
+    "name": "BANK GANESHA",
+    "code": "161",
+    "short_name": "BANK_GANESHA"
+}, {
+    "name": "BANK WINDU KENTJANA",
+    "code": "162",
+    "short_name": "BANK_WINDU_KENTJANA"
+}, {
+    "name": "HALIM INDONESIA BANK",
+    "code": "164",
+    "short_name": "HALIM_INDONESIA_BANK"
+}, {
+    "name": "BANK HARMONI INTERNATIONAL",
+    "code": "166",
+    "short_name": "BANK_HARMONI_INTERNATIONAL"
+}, {
+    "name": "BANK KESAWAN",
+    "code": "167",
+    "short_name": "BANK_KESAWAN"
+}, {
+    "name": "BANK TABUNGAN NEGARA (PERSERO)",
+    "code": "200",
+    "short_name": "BANK_TABUNGAN_NEGARA_(PERSERO)"
+}, {
+    "name": "BANK HIMPUNAN SAUDARA 1906, TBK ",
+    "code": "212",
+    "short_name": "BANK_HIMPUNAN_SAUDARA_1906,_TBK"
+}, {
+    "name": "BANK TABUNGAN PENSIUNAN NASIONAL",
+    "code": "213",
+    "short_name": "BANK_TABUNGAN_PENSIUNAN_NASIONAL"
+}, {
+    "name": "BANK SWAGUNA",
+    "code": "405",
+    "short_name": "BANK_SWAGUNA"
+}, {
+    "name": "BANK JASA ARTA",
+    "code": "422",
+    "short_name": "BANK_JASA_ARTA"
+}, {
+    "name": "BANK MEGA",
+    "code": "426",
+    "short_name": "BANK_MEGA"
+}, {
+    "name": "BANK JASA JAKARTA",
+    "code": "427",
+    "short_name": "BANK_JASA_JAKARTA"
+}, {
+    "name": "BANK BUKOPIN",
+    "code": "441",
+    "short_name": "BANK_BUKOPIN"
+}, {
+    "name": "BANK SYARIAH MANDIRI",
+    "code": "451",
+    "short_name": "BANK_SYARIAH_MANDIRI"
+}, {
+    "name": "BANK BISNIS INTERNASIONAL",
+    "code": "459",
+    "short_name": "BANK_BISNIS_INTERNASIONAL"
+}, {
+    "name": "BANK SRI PARTHA",
+    "code": "466",
+    "short_name": "BANK_SRI_PARTHA"
+}, {
+    "name": "BANK JASA JAKARTA",
+    "code": "472",
+    "short_name": "BANK_JASA_JAKARTA"
+}, {
+    "name": "BANK BINTANG MANUNGGAL",
+    "code": "484",
+    "short_name": "BANK_BINTANG_MANUNGGAL"
+}, {
+    "name": "BANK BUMIPUTERA",
+    "code": "485",
+    "short_name": "BANK_BUMIPUTERA"
+}, {
+    "name": "BANK YUDHA BHAKTI",
+    "code": "490",
+    "short_name": "BANK_YUDHA_BHAKTI"
+}, {
+    "name": "BANK MITRANIAGA",
+    "code": "491",
+    "short_name": "BANK_MITRANIAGA"
+}, {
+    "name": "BANK AGRO NIAGA",
+    "code": "494",
+    "short_name": "BANK_AGRO_NIAGA"
+}, {
+    "name": "BANK INDOMONEX",
+    "code": "498",
+    "short_name": "BANK_INDOMONEX"
+}, {
+    "name": "BANK ROYAL INDONESIA",
+    "code": "501",
+    "short_name": "BANK_ROYAL_INDONESIA"
+}, {
+    "name": "BANK ALFINDO",
+    "code": "503",
+    "short_name": "BANK_ALFINDO"
+}, {
+    "name": "BANK SYARIAH MEGA",
+    "code": "506",
+    "short_name": "BANK_SYARIAH_MEGA"
+}, {
+    "name": "BANK INA PERDANA",
+    "code": "513",
+    "short_name": "BANK_INA_PERDANA"
+}, {
+    "name": "BANK HARFA",
+    "code": "517",
+    "short_name": "BANK_HARFA"
+}, {
+    "name": "PRIMA MASTER BANK",
+    "code": "520",
+    "short_name": "PRIMA_MASTER_BANK"
+}, {
+    "name": "BANK PERSYARIKATAN INDONESIA",
+    "code": "521",
+    "short_name": "BANK_PERSYARIKATAN_INDONESIA"
+}, {
+    "name": "BANK AKITA",
+    "code": "525",
+    "short_name": "BANK_AKITA"
+}, {
+    "name": "LIMAN INTERNATIONAL BANK",
+    "code": "526",
+    "short_name": "LIMAN_INTERNATIONAL_BANK"
+}, {
+    "name": "ANGLOMAS INTERNASIONAL BANK",
+    "code": "531",
+    "short_name": "ANGLOMAS_INTERNASIONAL_BANK"
+}, {
+    "name": "BANK DIPO INTERNATIONAL",
+    "code": "523",
+    "short_name": "BANK_DIPO_INTERNATIONAL"
+}, {
+    "name": "BANK KESEJAHTERAAN EKONOMI",
+    "code": "535",
+    "short_name": "BANK_KESEJAHTERAAN_EKONOMI"
+}, {
+    "name": "BANK UIB",
+    "code": "536",
+    "short_name": "BANK_UIB"
+}, {
+    "name": "BANK ARTOS IND",
+    "code": "542",
+    "short_name": "BANK_ARTOS_IND"
+}, {
+    "name": "BANK PURBA DANARTA",
+    "code": "547",
+    "short_name": "BANK_PURBA_DANARTA"
+}, {
+    "name": "BANK MULTI ARTA SENTOSA",
+    "code": "548",
+    "short_name": "BANK_MULTI_ARTA_SENTOSA"
+}, {
+    "name": "BANK MAYORA",
+    "code": "553",
+    "short_name": "BANK_MAYORA"
+}, {
+    "name": "BANK INDEX SELINDO",
+    "code": "555",
+    "short_name": "BANK_INDEX_SELINDO"
+}, {
+    "name": "BANK VICTORIA INTERNATIONAL",
+    "code": "566",
+    "short_name": "BANK_VICTORIA_INTERNATIONAL"
+}, {
+    "name": "BANK EKSEKUTIF",
+    "code": "558",
+    "short_name": "BANK_EKSEKUTIF"
+}, {
+    "name": "CENTRATAMA NASIONAL BANK",
+    "code": "559",
+    "short_name": "CENTRATAMA_NASIONAL_BANK"
+}, {
+    "name": "BANK FAMA INTERNASIONAL",
+    "code": "562",
+    "short_name": "BANK_FAMA_INTERNASIONAL"
+}, {
+    "name": "BANK SINAR HARAPAN BALI",
+    "code": "564",
+    "short_name": "BANK_SINAR_HARAPAN_BALI"
+}, {
+    "name": "BANK HARDA",
+    "code": "567",
+    "short_name": "BANK_HARDA"
+}, {
+    "name": "BANK FINCONESIA",
+    "code": "945",
+    "short_name": "BANK_FINCONESIA"
+}, {
+    "name": "BANK MERINCORP",
+    "code": "946",
+    "short_name": "BANK_MERINCORP"
+}, {
+    "name": "BANK MAYBANK INDOCORP",
+    "code": "947",
+    "short_name": "BANK_MAYBANK_INDOCORP"
+}, {
+    "name": "BANK OCBC – INDONESIA",
+    "code": "948",
+    "short_name": "BANK_OCBC_INDONESIA"
+}, {
+    "name": "BANK CHINA TRUST INDONESIA",
+    "code": "949",
+    "short_name": "BANK_CHINA_TRUST_INDONESIA"
+}, {
+    "name": "BANK COMMONWEALTH",
+    "code": "950",
+    "short_name": "BANK_COMMONWEALTH"
+}]

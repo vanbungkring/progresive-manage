@@ -1,0 +1,112 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Target Donasi (Rp)</label>
+                                <input required type="number" class="form-control" name="campaignFundTarget" value="<%= typeof data.data!='undefined' && data.data.fundRaisingTarget ? data.data.fundRaisingTarget : '' %>">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Tanggal Berakhir Campaign</label>
+                                <div class="input-group w-md">
+                                    <input required type="text" class="form-control" ui-jq="daterangepicker" ui-options="{singleDatePicker:true, locale: {format: 'DD/MM/YYYY'} }" name="campaignDateTarget" value="<%= typeof data.data!='undefined' && data.data.endDate ? moment(data.data.endDate, 'MM/DD/YYYY 00:00:00').format('MM/DD/YYYY') : '' %>">
+                                    <span class="input-group-btn">fundRaisingTarget
+                                  <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Kategori Campaign</label>
+                                <select required ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" id="categorySelect" required name="campaignCategory">
+                                  <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="bankAvail">
+                            <div class="form-group">
+                                <label>Pilih Bank Akun</label>
+                            </div>
+                        </div>
+                    </div>
+                    <legend>Detail Campaign</legend>
+                    <div class="form-group">
+                        <label>Judul Campaign</label>
+                        <input required type="text" class="form-control" name="title" value="<%= typeof data.data!='undefined' && data.data.postMeta.title ? data.data.postMeta.title : '' %>">
+                    </div>
+                    <div class="form-group">
+                        <label>Tentang Campaign</label>
+                        <textarea required ui-jq="summernote" name="content" class="form-control" id="summernote_textarea_cloudinary" rows="10" ui-options="{height:'200',placeholder:'type description here'}"><%= typeof data.data!='undefined' && data.data.postMeta.content ? data.data.postMeta.content : '' %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="btn m-b-xs btn-sm btn-primary btn-addon" id="uploadCloudinary" ui-jq="cloudinary" ui-options><i class="fa fa-plus"></i>Unggah Gambar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gallery" id="result" class="sortable" ui-jq="sortable">
+                        <% if(typeof data.data!='undefined' && data.data.postMeta.images){data.data.postMeta.images.forEach(function(img){ console.log(img) %>
+                            <div class="col-lg-3 col-sm-4 col-xs-6 upload-image-thumb">
+                                <div class="div-img-del">
+                                  <a class="btn btn-default btn-sm btn-danger deleteImage">
+                                    <i class="glyphicon glyphicon-remove icon "></i>
+                                  </a>
+                                </div>
+                                <img class="thumbnail img-responsive" src="<%=img%>">
+                                <input required name="images[]" type="hidden" value="<%=img%>">
+                            </div>
+                        <%})}%>
+                    </div>
+                    <!-- <div class="form-group hidden">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label>Deskripsi</label>
+                            </div>
+                        </div>
+                        <input  ui-jq="tagsinput" ui-options="" class="form-control" name="tags" value="<%= typeof data.data!='undefined' && data.data.postMeta.tag ? data.data.postMeta.tag : '' %>">
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <legend>Status</legend>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="checkbox-inline i-checks">
+                              <input type="checkbox" name="publishedStatus" <%= typeof data.data!='undefined' && data.data.publishedStatus ? 'checked' : '' %>>
+                                <i></i>Publikasikan kampanye ini</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <legend>Featured</legend>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="checkbox-inline i-checks">
+                              <input type="checkbox" name="featured" <%= typeof data.data!='undefined' && data.data.featured ? 'checked' : '' %>>
+                                <i></i>Letakkan campaign ini di halaman depan</label>
+                        </div>
+                    </div>
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var selectedCat = <%- (typeof data.data!='undefined' && data.data.campaignCategory) ? JSON.stringify(data.data.campaignCategory)+';' : '"";' %>
+    var selectedBankArray = <%- typeof data.data!='undefined' && data.data.bank ? JSON.stringify(data.data.bank)+';' : '"";' %>
+</script>

@@ -1,0 +1,209 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%= title %></h1>
+</div>
+
+<% if ( typeof message!='undefined' && message.length>0) { %>
+  <div class="alert alert-<%=message[0].status%>" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%=message[0].message%>
+  </div>
+<% } %>
+
+<div class="wrapper-md">
+    <div class="tab-container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="" data-toggle="tab" data-target="#tab_1" aria-expanded="false">Transaction Summary</a></li>
+            <li class=""><a href="" data-toggle="tab" data-target="#tab_2" aria-expanded="false">Payment Confirmation <span class="badge bg-danger badge-sm m-l-xs">6</span></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-danger" draggable="true" style="display: block;">
+                            <div class="panel-heading">
+                                Transaction Detail
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped b-t b-b">
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Expected Amount</td>
+                                            <td>
+                                                <span class="pull-right">
+                                                  Rp <%=thousandSeparatorOnly(data.transaction.data.transactionContext.totalAmount)%>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-info" draggable="true" style="display: block;">
+                            <div class="panel-heading">
+                                Customer Information
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped b-t b-b">
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>
+                                                <%=data.transaction.data.userContext.email%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Unique ID</td>
+                                            <td>
+                                                <%=data.transaction.data.userContext.donor%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Payment Status</div>
+                            <form role="form" ui-jq='parsley' method="POST">
+                                <table class="table table-striped m-b-none">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Set Payment Status</strong>
+                                            </td>
+                                            <td>
+                                                <select ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" required name="paymentStatus" id="paymentStatusSelect">
+                                                    <option value=""></option>
+                                                    <option value="UNCONFIRMED PAYMENT">UNCONFIRMED PAYMENT</option>
+                                                    <option value="PAYMENT DECLINED">PAYMENT DECLINED</option>
+                                                    <option value="PAYMENT PROOF RECEIVED">PAYMENT PROOF RECEIVED</option>
+                                                    <option value="PAYMENT PROOF NOT VALID">PAYMENT PROOF NOT VALID</option>
+                                                    <option value="PAYMENT PROCESSED">PAYMENT PROCESSED</option>
+                                                    <option value="PAYMENT APPROVED">PAYMENT APPROVED</option>
+                                              </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <strong>Previous Status</strong>
+                                            </td>
+                                            <td>
+                                                <%=data.transaction.data.status.message%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Expected Amount</strong>
+                                            </td>
+                                            <td>
+                                                <span class="pull-right">
+                                                  Rp <%=thousandSeparatorOnly(data.transaction.data.transactionContext.totalAmount)%>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Expected Bank</strong>
+                                            </td>
+                                            <td>
+                                                <%=data.transaction.data.transactionContext.bankInfo?data.transaction.data.transactionContext.bankInfo.bank.name:"-"%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Payment Received Date</strong>
+                                            </td>
+                                            <td>
+                                                <div class="input-group w-md">
+                                                  <input type="text" class="form-control hidden" name="donor" value="<%=data.transaction.data.userContext.donor?data.transaction.data.userContext.donor:''%>">
+                                                    <input type="text" class="form-control" ui-jq="daterangepicker" ui-options={singleDatePicker:true} name="approvalDate" value="<%= typeof data.data!='undefined' && data.data.endDate ? moment(data.data.endDate, 'MM/DD/YYYY 00:00:00').format('MM/DD/YYYY') : '' %>">
+                                                    <span class="input-group-btn">Tgl Disetujui
+                                                <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                                              </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Keterangan</strong>
+                                            </td>
+                                            <td>
+                                                <textarea name="notes" class="form-control" rows="5"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Bank Aktual</strong>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select ui-jq="select2" ui-options="{placeholder: ''}" class="form-control" id="availBank" name="bankId" required></select>
+                                                    <option value=""></option>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Jumlah Aktual</strong>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="Number" class="form-control" name="actualAmount" required value="<%=data.transaction.data.transactionContext.totalAmount%>">
+                                                                <input type="text" class="form-control hidden" name="_id" required value="<%=data.transaction.data._id%>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <button type="submit" class="btn btn-success">UPDATE STATUS</button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab_2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Bukti Pembayaran
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table" ui-jq="dataTable" ui-options="{order: [[ 0, 'desc' ]], language: {url: 'http://cdn.datatables.net/plug-ins/1.10.13/i18n/Indonesian.json'}}" class="table table-striped b-t b-b">
+                            <thead>
+                                <tr>
+                                    <th>Upload Date</th>
+                                    <th>Payment Proof Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.paymentConfirmation.data.forEach(function(paymentConfirmation){ %>
+                                    <tr>
+                                        <td>
+                                            <%=paymentConfirmation.createdAt%>
+                                        </td>
+                                        <td>
+                                            <a href="<%=paymentConfirmation.paymentProof.url%>" ui-jq="ekko" ui-options data-toggle="lightbox" data-title="A random title" data-footer="A custom footer text"><img src="<%=paymentConfirmation.paymentProof.url%>" class="img-fluid"></a>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

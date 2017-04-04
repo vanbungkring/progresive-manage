@@ -1,0 +1,64 @@
+{
+    "app": {
+        "name": "developmentCookieIsTheBest",
+        "age": 6000000,
+        "secret": "mock-a3fda9a5c38c21a3da81ec074f15d4f5",
+        "front": "front-moc-a3fda9a5c38c21a3da81ec074f15d4f5",
+        "sign_secret": "zispro-mock",
+        "platformFee": 5,
+        "port": 6000,
+        "public": {
+            "name": "NUCARE",
+            "domain": "NUCARE.ID",
+            "url": "http://nucare.id"
+        }
+    },
+    "payment": {
+        "rule": {
+            "expire": 86400000,
+            "reminder": 43200000
+        }
+    },
+    "mongodb": {
+        "host": "localhost",
+        "username": "27017",
+        "db": "lumen-dev",
+        "password": "",
+        "username": "",
+        "fullPath": "mongodb://db.vastheart.com:3000/zispro-dev"
+    },
+    "cloudinary": {
+        "name": "djftvyf87",
+        "api_key": "291961627733528",
+        "secret": "9SeQDcQrSDKsjtfbtn_rYQ5WnFY",
+        "env": "CLOUDINARY_URL=cloudinary://291961627733528:9SeQDcQrSDKsjtfbtn_rYQ5WnFY@djftvyf87"
+    },
+    "cors": {
+        "allow": "http://localhost:4000"
+    },
+    "redis": {
+        "port": 6123,
+        "host": "localhost",
+        "client": "client",
+        "ttl": 6000000,
+        "pass": "acca7539b6662720359f8e555b7df3208b930ace",
+        "prefixapi": "zispro-dev-api:",
+        "prefixfront": "zispro-dev-front:",
+        "prefixweb": "zispro-dev-web:"
+    },
+    "sms": {
+        "nexmo": {
+            "api_key": "",
+            "secret": ""
+        }
+    },
+    "mailgun": {
+        "api_key": "key-2a4af88897911ab2110b4200ec6420b8",
+        "domain": "rocknnull.com",
+        "main_sender": "support@rocknnull.com"
+    },
+    "public": {
+        "user": "zispro",
+        "secret": "zispro123"
+    }
+}

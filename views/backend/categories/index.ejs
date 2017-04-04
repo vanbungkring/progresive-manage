@@ -1,0 +1,66 @@
+<div class="bg-light lter b-b wrapper-md">
+    <span class="btn-group pull-right">
+      <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/categories/add" class="btn btn-default btn-sm btn-success">TAMBAH CAMPAIGN CATEGORY</a>
+  </span>
+    <h1 class="m-n font-thin h3"><%= title %></h1>
+</div>
+
+<% if ( typeof message!='undefined' && message.length>0) { %>
+  <div class="alert alert-<%=message[0].status%>" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%=message[0].message%>
+  </div>
+<% } %>
+
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading hide">
+            <%= title %>
+        </div>
+        <div class="table-responsive">
+            <table id="table" ui-jq="dataTable" ui-options="{order: [[ 0, 'asc' ]], language: {url: 'http://cdn.datatables.net/plug-ins/1.10.13/i18n/Indonesian.json'}}" class="table table-striped b-t b-b">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <!-- <th>Slug</th> -->
+                        <th>Pembuat</th>
+                        <th class="no-sort">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.data.forEach(function(categories){ %>
+                        <tr>
+                            <td>
+                                <%=categories.name%>
+                            </td>
+                            <!-- <td>
+                                <%=categories.slug%>
+                            </td> -->
+                            <td>
+                                <%=categories.creator?categories.creator.firstName:'Unsigned'%>
+                            </td>
+                            <td>
+                                <div class="btn-group dropdown">
+                                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                  </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="categories/edit/<%=categories._id%>">Ubah</a>
+                                        </li>
+                                        <li>
+                                            <a href="categories/delete/<%=categories._id%>"><span class="text-danger">Hapus</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

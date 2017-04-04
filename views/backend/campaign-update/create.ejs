@@ -1,0 +1,32 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Update title</label>
+                                <input type="text" class="form-control" name="title">
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label>Content</label>
+                                    <textarea ui-jq="summernote" name="content" class="form-control" rows="10" id="summernote_textarea_cloudinary" name=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

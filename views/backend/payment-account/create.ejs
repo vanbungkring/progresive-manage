@@ -1,0 +1,59 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="form-group">
+                        <label>Bank</label>
+                        <select ui-jq="select2" ui-options="{views'}" class="form-control" id="bankSelect" name="bankName" required>
+                          <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomer Rekening</label>
+                        <input type="text" class="form-control" name="accountNumber" value="<%=typeof data.data!='undefined' && data.data.bank?data.data.bank.accNumber:''%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Pemilik Akun</label>
+                        <input type="text" class="form-control" name="name" value="<%=typeof data.data!='undefined' && data.data.bank?data.data.bank.holderName:''%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cabang</label>
+                        <input type="text" class="form-control" name="branchName" value="<%=typeof data.data!='undefined' && data.data.bank?data.data.bank.branchName:''%>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Untuk Cabang Submerchant</label>
+                        <select ui-jq="select2" ui-options="{placeholder: ''}" class="form-control" id="merchantSelect" required name="merchant">
+                          <option value=""></option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="row" id="paymentAvail">
+                        <div class="col-md-12 form-group gallery">
+                            <label>Pilih kategori pembayaran</label>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Keterangan</label>
+                            <textarea name="description" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var selectedBank = <%- typeof data.data!='undefined' && data.data.bank.shortName ? JSON.stringify(data.data.bank.shortName)+';' : '"";' %>
+    var selectedMerchant = <%- typeof data.data!='undefined' && data.data.merchant ? JSON.stringify(data.data.merchant)+';' : '"";' %>
+</script>

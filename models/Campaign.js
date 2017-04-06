@@ -45,26 +45,11 @@ var newSchema = new Schema({
             type: String
         }]
     },
-    'startDate': {
-        type: Date,
-        default: Date.now
-    },
-    'endDate': {
-        type: Date,
-    },
     'paymentReceive': [{
         type: Schema.Types.ObjectId,
         ref: 'paymentReceive',
         required: false,
     }],
-    'fundRaisingTarget': {
-        type: Number,
-        default: 0
-    },
-    'fundRaisingProgress': {
-        type: Number,
-        default: 0
-    },
     'featured': {
         type: Boolean,
         default: false

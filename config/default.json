@@ -4,12 +4,12 @@
         "age": 6000000,
         "secret": "dev-a3fda9a5c38c21a3da81ec074f15d4f5",
         "front": "dev-front-a3fda9a5c38c21a3da81ec074f15d4f5",
-        "sign_secret": "zispro-dev",
+        "sign_secret": "CERITA-DEV",
         "platformFee": 5,
         "public": {
-            "name": "NUCARE",
-            "domain": "NUCARE.ID",
-            "support":"support@nucare.id",
+            "name": "CERITA",
+            "domain": "CERITA.ID",
+            "support":"support@cerita.id",
             "logo":"http://res.cloudinary.com/oddro/image/upload/v1490446141/cropped-fa-lazisnu_mngglp.png",
             "url": "http://nucare.zispro.co/",
             "social":{
@@ -43,7 +43,7 @@
         "db": "lumen-dev",
         "password": "",
         "username": "",
-        "fullPath": "mongodb://db.vastheart.com:3000/zispro-dev"
+        "fullPath": "mongodb://db.vastheart.com:3000/cerita-dev"
     },
     "cloudinary": {
         "name": "djftvyf87",

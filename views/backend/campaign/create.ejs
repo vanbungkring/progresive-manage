@@ -7,35 +7,13 @@
             <div class="panel-body">
                 <form role="form" method="POST" ui-jq="parsley">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Target Donasi (Rp)</label>
-                                <input required type="number" class="form-control" name="campaignFundTarget" value="<%= typeof data.data!='undefined' && data.data.fundRaisingTarget ? data.data.fundRaisingTarget : '' %>">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Tanggal Berakhir Campaign</label>
-                                <div class="input-group w-md">
-                                    <input required type="text" class="form-control" ui-jq="daterangepicker" ui-options="{singleDatePicker:true, locale: {format: 'DD/MM/YYYY'} }" name="campaignDateTarget" value="<%= typeof data.data!='undefined' && data.data.endDate ? moment(data.data.endDate, 'MM/DD/YYYY 00:00:00').format('MM/DD/YYYY') : '' %>">
-                                    <span class="input-group-btn">fundRaisingTarget
-                                  <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                                </div>
-                            </div>
 
-                        </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Kategori Campaign</label>
                                 <select required ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" id="categorySelect" required name="campaignCategory">
                                   <option value=""></option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12" id="bankAvail">
-                            <div class="form-group">
-                                <label>Pilih Bank Akun</label>
                             </div>
                         </div>
                     </div>

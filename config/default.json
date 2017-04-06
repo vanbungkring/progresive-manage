@@ -4,19 +4,19 @@
         "age": 6000000,
         "secret": "dev-a3fda9a5c38c21a3da81ec074f15d4f5",
         "front": "dev-front-a3fda9a5c38c21a3da81ec074f15d4f5",
-        "sign_secret": "CERITA-DEV",
+        "sign_secret": "PROGRESIVE-TV-DEV",
         "platformFee": 5,
         "public": {
-            "name": "CERITA",
-            "domain": "CERITA.ID",
-            "support":"support@cerita.id",
-            "logo":"http://res.cloudinary.com/oddro/image/upload/v1490446141/cropped-fa-lazisnu_mngglp.png",
-            "url": "http://nucare.zispro.co/",
-            "social":{
-              "facebook":"https://www.facebook.com/pplazisnu/",
-              "instagram":"https://www.instagram.com/nucare_lazisnu/?hl=id",
-              "twitter":"https://twitter.com/nucare_lazisnu",
-              "youtube":"https://www.youtube.com/channel/UCKDYu6IIcWWtfc_FBqYwBVg"
+            "name": "PROGRESIVE.TV",
+            "domain": "PROGRESIF.TV",
+            "support": "support@cerita.id",
+            "logo": "http://res.cloudinary.com/oddro/image/upload/v1490446141/cropped-fa-lazisnu_mngglp.png",
+            "url": "http://progresif.tv/",
+            "social": {
+                "facebook": "https://www.facebook.com/pplazisnu/",
+                "instagram": "https://www.instagram.com/progresif_lazisnu/?hl=id",
+                "twitter": "https://twitter.com/progresif_lazisnu",
+                "youtube": "https://www.youtube.com/channel/UCKDYu6IIcWWtfc_FBqYwBVg"
             }
         }
     },
@@ -43,7 +43,7 @@
         "db": "lumen-dev",
         "password": "",
         "username": "",
-        "fullPath": "mongodb://db.vastheart.com:3000/cerita-dev"
+        "fullPath": "mongodb://db.vastheart.com:3000/progresif-tv-dev"
     },
     "cloudinary": {
         "name": "djftvyf87",

@@ -46,7 +46,7 @@
         "fullPath": "mongodb://db.vastheart.com:3000/progresif-tv-dev"
     },
     "cloudinary": {
-        "name": "djftvyf87",
+        "name": "dnauqnag6",
         "api_key": "291961627733528",
         "secret": "9SeQDcQrSDKsjtfbtn_rYQ5WnFY",
         "env": "CLOUDINARY_URL=cloudinary://291961627733528:9SeQDcQrSDKsjtfbtn_rYQ5WnFY@djftvyf87"
@@ -57,9 +57,9 @@
         "client": "client",
         "ttl": 6000000,
         "pass": "acca7539b6662720359f8e555b7df3208b930ace",
-        "prefixapi": "zispro-dev-api:",
-        "prefixfront": "zispro-dev-front:",
-        "prefixweb": "zispro-dev-web:"
+        "prefixapi": "progresif-dev-api:",
+        "prefixfront": "progresif-dev-front:",
+        "prefixweb": "progresif-dev-web:"
     },
     "sms": {
         "nexmo": {
@@ -73,7 +73,7 @@
         "main_sender": "support@rocknnull.com"
     },
     "public": {
-        "user": "zispro",
-        "secret": "zispro123"
+        "user": "progresif",
+        "secret": "progresif123"
     }
 }

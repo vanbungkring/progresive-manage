@@ -30,7 +30,19 @@ function cleanPastedHTML(input) {
     }
     return output;
 }
-
+function validateYouTubeUrl(url) {
+    if (typeof url !== 'undefined' || url != '') {
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+        var match = url.match(regExp);
+        if (match && match[2].length == 11) {
+            return 'https://www.youtube.com/embed/' + match[2] + '?autoplay=0&enablejsapi=1';
+        } else {
+            return null
+        }
+    } else {
+        return null
+    }
+}
 function currencyFormatterRupiah(parameters) {
     var rev = parseInt(parameters, 10).toString().split('').reverse().join('');
     var rev2 = '';
@@ -280,6 +292,20 @@ var jp_config = {
 
 + function($) {
     $(function() {
+        if ($('#youtubeVideoUrl')) {
+            $('#youtubeVideoUrl').on('input', function() {
+                var url = $('#youtubeVideoUrl').val();
+                if (validateYouTubeUrl(url) != null) {
+                    $('#videoObject').parent().show();
+                } else {
+                    console.log('err');
+                }
+                // if($(this).parsley().isValid()){
+                // 	alert(validateYouTubeUrl(url));
+                // }
+            });
+
+        }
         if ($('#merchantSelect').length > 0) {
             $.ajax({
                 url: '/api/v1/submerchant',

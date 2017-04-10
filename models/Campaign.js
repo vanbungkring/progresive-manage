@@ -7,31 +7,21 @@ if (mongoose.connection.readyState === 0) {
 
 
 var newSchema = new Schema({
-    'merchant': {
-        type: Schema.Types.ObjectId,
-        ref: 'merchant',
-        required: false,
-    },
     'writer': {
         type: Schema.Types.ObjectId,
         ref: 'user',
         required: true,
     },
-    'campaignUpdate': [{
-        type: Schema.Types.ObjectId,
-        ref: 'campaignUpdate',
-        required: false,
-    }],
     'campaignCategory': {
         type: Schema.Types.ObjectId,
         ref: 'categories',
         required: false,
     },
-    'bank': [{
+    'authod': {
         type: Schema.Types.ObjectId,
-        ref: 'paymentAccount',
+        ref: 'author',
         required: false,
-    }],
+    },
     'postMeta': {
         'title': String,
         'slug': String,
@@ -45,11 +35,6 @@ var newSchema = new Schema({
             type: String
         }]
     },
-    'paymentReceive': [{
-        type: Schema.Types.ObjectId,
-        ref: 'paymentReceive',
-        required: false,
-    }],
     'featured': {
         type: Boolean,
         default: false

@@ -1,5 +1,19 @@
 + function($) {
     $(function() {
+        if ($('#youtubeVideoUrl')) {
+            $('#youtubeVideoUrl').on('input', function() {
+                var url = $('#youtubeVideoUrl').val();
+                if (validateYouTubeUrl(url) != null) {
+                    $('#videoObject').parent().show();
+                } else {
+                    console.log('err');
+                }
+                // if($(this).parsley().isValid()){
+                // 	alert(validateYouTubeUrl(url));
+                // }
+            });
+
+        }
         if ($('#merchantSelect').length > 0) {
             $.ajax({
                 url: '/api/v1/submerchant',

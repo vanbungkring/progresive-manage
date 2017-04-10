@@ -27,16 +27,16 @@ module.exports = function(app, auth) {
     .post('/v1/categories', auth, controllers.APICategoriesController.index)
     .post('/v1/categories/slug/', auth, controllers.APICategoriesController.findBySlug);
   app
-    .post('/v1/campaign', auth, controllers.APICampaignController.index)
-    .post('/v1/campaign/detail/slug', auth, controllers.APICampaignController.findBySlugg)
-    .post('/v1/campaign/detail/donor', auth, controllers.APICampaignController.campaignDonor)
-    .post('/v1/campaign/detail', auth, controllers.APICampaignController.findById)
-    .post('/v1/campaign/search', auth, controllers.APISearchController.index)
-    .post('/v1/campaign/detail/update', auth, controllers.APICampaignController.campaignUpdate)
-    .post('/v1/campaign/related', auth, controllers.APICampaignController.findRelated);
+    .post('/v1/video', auth, controllers.APICampaignController.index)
+    .post('/v1/video/detail/slug', auth, controllers.APICampaignController.findBySlugg)
+    .post('/v1/video/detail/donor', auth, controllers.APICampaignController.campaignDonor)
+    .post('/v1/video/detail', auth, controllers.APICampaignController.findById)
+    .post('/v1/video/search', auth, controllers.APISearchController.index)
+    .post('/v1/video/detail/update', auth, controllers.APICampaignController.campaignUpdate)
+    .post('/v1/video/related', auth, controllers.APICampaignController.findRelated);
 
   app
-    .post('/v1/payment/submit/campaign', auth, controllers.APIPaymentSubmit.campaign)
+    .post('/v1/payment/submit/video', auth, controllers.APIPaymentSubmit.campaign)
     .post('/v1/payment/submit/zis', auth, controllers.APIPaymentSubmit.zis)
     .post('/v1/payment/detail', auth, controllers.APIPaymentHistory.detail)
     .post('/v1/payment/history/:name', auth, controllers.APIPaymentHistory.history)

@@ -88,6 +88,14 @@ module.exports = function(app, passport) {
         .get('/categories/delete/:id', controllers.categoriesController.delete)
         .post('/categories/delete/:id', controllers.categoriesController.delete);
     app
+        .get('/author/', controllers.authorController.index)
+        .get('/author/add', controllers.authorController.add)
+        .post('/author/add', controllers.authorController.add)
+        .get('/author/edit/:id', controllers.authorController.edit)
+        .post('/author/edit/:id', controllers.authorController.edit)
+        .get('/author/delete/:id', controllers.authorController.delete)
+        .post('/author/delete/:id', controllers.authorController.delete);
+    app
         .get('/donor/', controllers.donorController.index)
         .get('/donor/add', controllers.donorController.add)
         .post('/donor/add', controllers.donorController.add)

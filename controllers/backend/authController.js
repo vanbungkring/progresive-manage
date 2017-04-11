@@ -1,7 +1,7 @@
 var auth = {
   login: function(req, res) {
     if (req.isAuthenticated()) {
-      return res.redirect(PREFIX_ROUTE_BACK_OFFICE + '/dashboard');
+      return res.redirect(PREFIX_ROUTE_BACK_OFFICE + '/campaign');
     }
     res.render('backend/auth/index', {
       layout: 'backend/layout/authLayout',

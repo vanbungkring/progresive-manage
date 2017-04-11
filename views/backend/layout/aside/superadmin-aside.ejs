@@ -12,12 +12,6 @@
                     <li class="hide hidden-folded padder m-t m-b-sm text-muted text-xs">
                         <span>Navigasi</span>
                     </li>
-                    <li class="<%= locals.state ? isActive(['dashboard'], state) : '' %>">
-                        <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/dashboard">
-                            <i class="glyphicon glyphicon-stats icon <%= locals.state ? isActive(['dashboard'], state, 'text-primary-dker') : '' %>"></i>
-                            <span class="font-bold">Dasbor</span>
-                        </a>
-                    </li>
                     <li class="<%= locals.state ? isActive(['campaign', 'categories'], state) : '' %>">
                         <a href class="auto">
                             <span class="pull-right text-muted">
@@ -30,7 +24,12 @@
                         <ul class="nav nav-sub dk">
                             <li class="<%= locals.state ? isActive(['campaign'], state) : '' %>">
                                 <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/campaign">
-                                    <span>Campaign</span>
+                                    <span>Video</span>
+                                </a>
+                            </li>
+                            <li class="<%= locals.state ? isActive(['author'], state) : '' %>">
+                                <a href="<%=PREFIX_ROUTE_BACK_OFFICE%>/author">
+                                    <span>Author</span>
                                 </a>
                             </li>
                             <li class="<%= locals.state ? isActive(['categories'], state) : '' %>">

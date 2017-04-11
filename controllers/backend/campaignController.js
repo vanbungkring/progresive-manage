@@ -67,7 +67,7 @@ var campaignController = {
             var minDate = global.library.MOMENT(temp).format('DD/MM/YYYY');
             res.render('backend/campaign/create', {
                 layout: 'backend/layout/base',
-                title: 'Tambah Campaign',
+                title: 'Tambah konten',
                 data: {},
                 state: state,
                 minDate: minDate
@@ -85,7 +85,7 @@ var campaignController = {
                 // res.json(result);
                 res.render('backend/campaign/create', {
                     layout: 'backend/layout/base',
-                    title: 'Ubah Campaign',
+                    title: 'Ubah konten',
                     data: result,
                     moment: global.library.MOMENT,
                     state: state,
@@ -134,8 +134,8 @@ var campaignController = {
                     ? global.status.STATUS_FAILED
                     : global.status.STATUS_SUCCESS;
                 var msg = err
-                    ? 'Gagal merubah campaign'
-                    : 'Berhasil merubah campaign ' + post.title;
+                    ? 'Gagal merubah konten'
+                    : 'Berhasil merubah konten ' + post.title;
                 global.library.FLASH(req, state, globalStatus, msg);
                 res.redirect(PREFIX_ROUTE_BACK_OFFICE + '/campaign');
             });
@@ -150,7 +150,7 @@ var campaignController = {
             campaignVM.findCampaign(constructParams, function(result) {
                 res.render('backend/campaign/delete', {
                     layout: 'backend/layout/base',
-                    title: 'Konfirmasi Hapus Campaign',
+                    title: 'Konfirmasi Hapus konten',
                     data: result,
                     moment: global.library.MOMENT,
                     state: state

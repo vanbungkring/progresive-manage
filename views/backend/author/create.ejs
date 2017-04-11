@@ -1,0 +1,35 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3"><%=title%></h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" method="POST" ui-jq="parsley">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Nama Author</label>
+                                <input type="text" class="form-control" name="name" value="<%= typeof data.data!='undefined' && data.data.name ? data.data.name : '' %>">
+                            </div>
+                            <div class="form-group">
+                                <label>Deskripsi</label>
+                                <textarea name="description" class="form-control" rows="5" ><%= typeof data.data!='undefined' && data.data.description ? data.data.description : '' %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="status" <%= (typeof data.data!='undefined' && data.data.status>0) ? 'checked' : '' %>>
+                                    <i></i>Aktifkan Author
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

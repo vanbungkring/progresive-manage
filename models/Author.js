@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 if (mongoose.connection.readyState === 0) {
     mongoose.connect(require('./connection'));
 }
-
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
+var beautifyUnique = require('mongoose-beautiful-unique-validation');
 var newSchema = new Schema({
     'name': {
         type: String,
@@ -34,6 +35,16 @@ var newSchema = new Schema({
     }
 });
 
+newSchema.index({
+    name: 'text',
+    'slug': 'text'
+});
+newSchema.plugin(deepPopulate);
+newSchema.pre('save', function(next) {
+    this.updatedAt = Date.now();
+    next();
+});
+
 newSchema.pre('save', function(next) {
     this.updatedAt = Date.now();
     next();
@@ -55,4 +66,4 @@ newSchema.pre('findOneAndUpdate', function() {
     });
 });
 
-module.exports = mongoose.model('Author', newSchema);
+module.exports = mongoose.model('author', newSchema);

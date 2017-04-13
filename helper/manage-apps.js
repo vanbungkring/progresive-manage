@@ -90,6 +90,11 @@ module.exports = function(app, express, passport, path) {
             state: 'err',
         });
     });
+    app.locals.youtubeThumbnail = function(string){
+      var youtubeId = string.split('v=')[1]
+      return "https://img.youtube.com/vi/"+youtubeId+"/0.jpg"
+
+    }
     app.locals.thousandSeparatorOnly = function(nStr) {
         return number_format(nStr, 0, '', '.');
     };

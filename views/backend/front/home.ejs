@@ -1,0 +1,7 @@
+  <% data.data.forEach(function(campaign){ %>
+    <div class="card">
+        <img src=<%=youtubeThumbnail(campaign.postMeta.videoUrl)%> alt="><%=campaign.postMeta.title%>">
+        <p class="card-text"><%=campaign.postMeta.title%></p>
+    </div>
+
+  <%});%>

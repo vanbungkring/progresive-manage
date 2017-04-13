@@ -9,8 +9,16 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Kategori Campaign</label>
+                                <label>Kategori</label>
                                 <select required ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" id="categorySelect" required name="campaignCategory">
+                                  <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Author</label>
+                                <select required ui-jq="select2" ui-options="{minimumResultsForSearch: -1, placeholder: ''}" class="form-control" id="authorSelect" required name="author">
                                   <option value=""></option>
                                 </select>
                             </div>
@@ -30,7 +38,7 @@
                         <textarea required ui-jq="summernote" name="content" class="form-control" id="summernote_textarea_cloudinary" rows="10" ui-options="{height:'200',placeholder:'type description here'}"><%= typeof data.data!='undefined' && data.data.postMeta.content ? data.data.postMeta.content : '' %></textarea>
                     </div>
                     <div class="row gallery" id="result" class="sortable" ui-jq="sortable">
-                        <% if(typeof data.data!='undefined' && data.data.postMeta.images){data.data.postMeta.images.forEach(function(img){ console.log(img) %>
+                        <% if(typeof data.data!='undefined' && data.data.postMeta.images){data.data.postMeta.images.forEach(function(img){ %>
                             <div class="col-lg-3 col-sm-4 col-xs-6 upload-image-thumb">
                                 <div class="div-img-del">
                                   <a class="btn btn-default btn-sm btn-danger deleteImage">

@@ -1,10 +1,12 @@
 var controllers = require(GLOBAL_PATH + '/controllers/backend/index');
 var Agendash = require('agendash');
 module.exports = function(app, passport) {
+  app
+      .get('/',controllers.frontController.home)
     app
-        .get('/', isLoggedIn, controllers.authController.login)
-        .post('/', isLoggedIn, passport.authenticate('local-login', {
-            successRedirect: PREFIX_ROUTE_BACK_OFFICE + '/dashboard', // redirect to the secure profile section
+        .get('/login', isLoggedIn, controllers.authController.login)
+        .post('/login', isLoggedIn, passport.authenticate('local-login', {
+            successRedirect: PREFIX_ROUTE_BACK_OFFICE + '/campaign', // redirect to the secure profile section
             failureRedirect: 'http://midtrans.co', // redirect back to the signup page if there is an error
             failureFlash: true // allow flash messages
         }))

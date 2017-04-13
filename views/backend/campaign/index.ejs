@@ -28,23 +28,10 @@
                     <tr>
                         <th class="hide">Tgl Dibuat</th>
                         <th>Judul</th>
-                        <th class="hidden-xs">
-                          <span class="pull-right">
-                            Target
-                          </span>
-                        </th>
-                        <th>
-                          <span class="pull-right">
-                            Progres
-                          </span>
-                        </th>
                         <th class="text-center">Donor</th>
 
 
                         <th class="hidden-xs">Kategori</th>
-
-                        <th class="hidden-xs">Dibuat</th>
-                                                  <th class="hidden-xs text-center">Update</th>
                         <th class="no-sort">Aksi</th>
                     </tr>
                 </thead>
@@ -57,28 +44,13 @@
                             <td>
                                 <%=campaign.postMeta.title%>
                             </td>
-                            <td class="hidden-xs">
-                              <span class="pull-right">
-                                Rp <%=thousandSeparatorOnly(campaign.fundRaisingTarget) %>
-                              </span>
-                            </td>
-                            <td>
-                              <span class="pull-right">
-                                Rp <%=thousandSeparatorOnly(campaign.fundRaisingProgress) %>
-                              </span>
-                            </td>
-                            <td class="text-center">
-                                <%=campaign.paymentReceive.length %>
-                            </td>
+
                             <td class="hidden-xs">
                                 <%=campaign.campaignCategory.name%>
                             </td>
                             <td class="hidden-xs">
                                 <%=fromNowWithLimit(campaign.createdAt)%>
                             </td>
-                            <td class="hidden-xs">
-                              <a class="btn btn-success" href="<%=PREFIX_ROUTE_BACK_OFFICE%>/campaign/<%=campaign._id%>/update">Update</div>
-                            </div>
                             <td>
                                 <div class="btn-group dropdown">
                                     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

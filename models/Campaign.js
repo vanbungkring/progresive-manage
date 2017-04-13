@@ -17,7 +17,7 @@ var newSchema = new Schema({
         ref: 'categories',
         required: false,
     },
-    'authod': {
+    'author': {
         type: Schema.Types.ObjectId,
         ref: 'author',
         required: false,

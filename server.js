@@ -39,7 +39,7 @@ var auth = function(req, res, next) {
     if (!user || !user.name || !user.pass) {
         return unauthorized(res);
     }
-    if (user.name === 'zispro' && user.pass === 'zispro123') {
+    if (user.name === GLOBAL_CONFIG.public.user && user.pass === GLOBAL_CONFIG.public.secret) {
         return next();
     } else {
         return unauthorized(res);

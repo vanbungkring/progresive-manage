@@ -26,6 +26,7 @@ module.exports = function(passport) {
                 models.user.findOne({
                     'email': email
                 }).deepPopulate('merchant').exec(function(err, result) {
+                  console.log(result);
                     if (err) {
                         return done(err);
                     }

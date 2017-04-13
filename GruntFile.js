@@ -10,6 +10,10 @@ module.exports = function(grunt) {
                         'public/backend/css/font-awesome/css/font-awesome.css',
                         'public/backend/css/custom/index.css',
                     ],
+                    'public/front/css/app.front.min.css':[
+                        'public/front/css/index.css',
+                        'public/front/css/front.custom.css',
+                    ]
                 }
             },
             options: {

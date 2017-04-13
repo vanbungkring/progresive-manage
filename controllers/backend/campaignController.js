@@ -11,7 +11,7 @@ var campaignController = {
         construct.queryParameters = {};
         construct.perPage = perPage;
         construct.page = page;
-        construct.deepPopulate = 'writer campaignCategory merchant bank';
+        construct.deepPopulate = 'writer campaignCategory author';
         construct.filter = '-postMeta.content';
         campaignVM.getAllCampaign(construct, '', function(result) {
             res.render('backend/campaign/index', {
@@ -32,6 +32,8 @@ var campaignController = {
             construct.fundRaisingTarget = req.body.campaignFundTarget;
             //construct.merchant = req.body.merchant ? req.body.merchant : req.user.merchant._id;
             construct.campaignCategory = req.body.campaignCategory;
+            construct.author = req.body.author;
+            post.videoUrl = req.body.videoUrl;
             construct.bank = req.body.bank;
             construct.writer = req.user._id
                 ? req.user._id
@@ -100,6 +102,8 @@ var campaignController = {
             construct.fundRaisingTarget = req.body.campaignFundTarget;
             //construct.merchant = req.body.merchant ? req.body.merchant : req.user.merchant._id;
             construct.campaignCategory = req.body.campaignCategory;
+            construct.author = req.body.author;
+            post.videoUrl = req.body.videoUrl;
             construct.bank = req.body.bank
                 ? req.body.bank
                 : [];

@@ -26,6 +26,9 @@ module.exports = function(app, auth) {
   app
     .post('/v1/categories', auth, controllers.APICategoriesController.index)
     .post('/v1/categories/slug/', auth, controllers.APICategoriesController.findBySlug);
+    app
+      .post('/v1/author', auth, controllers.APIAuthorController.index)
+      .post('/v1/author/slug/', auth, controllers.APIAuthorController.findBySlug);
   app
     .post('/v1/video', auth, controllers.APICampaignController.index)
     .post('/v1/video/detail/slug', auth, controllers.APICampaignController.findBySlugg)

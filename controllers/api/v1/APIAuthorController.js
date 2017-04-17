@@ -1,7 +1,7 @@
 const authorVM = require(GLOBAL_PATH + '/viewModel/authorVM.js');
 var AuthorController = {
     index: function(req, res) {
-      authorVM.getAllCategories({}, function(result) {
+      authorVM.getAllAuthor({}, function(result) {
           return res.json(result);
       });
     },

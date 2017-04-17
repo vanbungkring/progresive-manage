@@ -82,6 +82,39 @@ var frontController = {
             });
         });
 
+    },
+    findBySlugg: function(req, res) {
+      console.log(req.param);
+        var populate = [
+            {
+                path: 'campaignCategory',
+                select: 'name _id'
+            }, {
+                path: 'writer',
+                select: '_id firstName lastName'
+            }, {
+                path: 'bank',
+                select: 'bank'
+            }
+        ];
+        if (req.body.appToken) {
+            delete req.body.appToken;
+        }
+        if (!req.params.id) {
+            return res.json(output(global.status.STATUS_FAILED, global.status.STATUS_PARAMETERS_CAMPAIGN_ID_REQUIRED_MESSAGE, null));
+        }
+        // console.log(req.body);
+        var construct = {};
+        construct.queryParameters = {};
+        construct.populate = populate;
+        construct.queryParameters['postMeta.slug'] = req.params.id;
+        campaignVM.findCampaign(construct, function(result) {
+            return res.render('backend/front/detail', {
+                layout: 'backend/layout/front',
+                title: 'Akun Bank',
+                data: result
+            });
+        });
     }
 }
 module.exports = frontController;

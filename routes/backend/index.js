@@ -1,8 +1,9 @@
 var controllers = require(GLOBAL_PATH + '/controllers/backend/index');
 var Agendash = require('agendash');
 module.exports = function(app, passport) {
-  app
+    app
       .get('/',controllers.frontController.home)
+      .get('/content/video/:id',controllers.frontController.findBySlugg);
     app
         .get('/login', isLoggedIn, controllers.authController.login)
         .post('/login', isLoggedIn, passport.authenticate('local-login', {

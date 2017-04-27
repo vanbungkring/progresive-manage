@@ -1,9 +1,53 @@
-  <!-- <% data.data.forEach(function(campaign){ %>
-    <div class="card">
+<div class="staff-picked-posts padding-top-70 background-color-gray padding-bottom-40" id="chennal-page">
+    <div class="container">
+        <div class="tab-content">
+            <div class="blog-page">
 
-        <img src=<%=youtubeThumbnail(campaign.postMeta.videoUrl)%> alt="><%=campaign.postMeta.title%>">
-        <p class="card-text"><%=campaign.postMeta.title%></p>
-          <a href="/content/video/<%=campaign.postMeta.slug%>" class="btn btn-primary">Detail Video</a>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <ul class="staff-picked-videos">
+                              <% data.data.forEach(function(campaign){ %>
+
+                                <li class="col-md-3 col-sm-3 col-xs-12">
+                                    <div class="post-details">
+                                        <div class="overlay-inner-image">
+                                            <img src=<%=youtubeThumbnail(campaign.postMeta.videoUrl)%> alt="><%=campaign.postMeta.title%>">
+                                          <a href="/content/video/<%=campaign.postMeta.slug%>" class="image-overlay"></a>
+
+
+                                        </div>
+                                        <div class="image-content background-color-white text-center">
+                                            <div class="banner-category"><a href="#" class="cat"><%=campaign.campaignCategory.name%></a></div>
+
+                                            <h3><a href="/content/video/<%=campaign.postMeta.slug%>"><%=excerpt(campaign.postMeta.title,20)%></a></h3>
+                                            <p class="margin-bottom-0"> <span><%=campaign.author.name%></span> </p>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                      <%});%>
+
+
+                            </ul>
+                        </div>
+                        <!-- /Slide1 -->
+                    </div>
+                    <!-- /Slide1 -->
+
+                </div>
+
+
+
+            </div>
+            <!-- /#myCarousel -->
+
+
+
+
+        </div>
+
     </div>
-  <%});%> -->
-  <% include ../partials/front/featured.ejs %>
+
+
+</div>

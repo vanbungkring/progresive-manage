@@ -5,6 +5,10 @@ var frontController = {
             {
                 path: 'campaignCategory',
                 select: 'name _id'
+            },
+            {
+                path: 'author',
+                select: 'name _id'
             }, {
                 path: 'writer',
                 select: '_id firstName lastName'
@@ -63,7 +67,7 @@ var frontController = {
             if (result != null) {
                 res.render('backend/front/home', {
                     layout: 'backend/layout/front',
-                    title: 'Akun Bank',
+                    title: 'Serambi',
                     data: result
                 });
             }
@@ -75,7 +79,7 @@ var frontController = {
                 console.log(queryResult);
                 res.render('backend/front/home', {
                     layout: 'backend/layout/front',
-                    title: 'Akun Bank',
+                    title: 'Serambi',
                     data: queryResult
                 });
 
@@ -89,7 +93,10 @@ var frontController = {
             {
                 path: 'campaignCategory',
                 select: 'name _id'
-            }, {
+            },  {
+                  path: 'author',
+                  select: 'name _id'
+              }, {
                 path: 'writer',
                 select: '_id firstName lastName'
             }, {

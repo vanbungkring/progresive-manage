@@ -68,5 +68,8 @@ var jp_config = {
     select2: ['https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css'
     ],
+    front:[
+    '/backend/js/overide/slick-main.js',
+    '/backend/js/overide/slick.js'],
 
 };

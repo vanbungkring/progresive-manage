@@ -22,6 +22,9 @@ module.exports = function(app, express, passport, path) {
     app.locals.sanitizeSpace = function(parameters) {
         return parameters.split(' ').join('_').toLowerCase();
     };
+    app.locals.excerpt = function(string,limit){
+      return string.substring(0,parseInt(limit))
+    }
     app.locals.numeral = global.library.NUMERAL;
     app.locals.PREFIX_ROUTE_BACK_OFFICE = global.PREFIX_ROUTE_BACK_OFFICE;
     var sessionOpts = {
@@ -35,23 +38,20 @@ module.exports = function(app, express, passport, path) {
             prefix: GLOBAL_CONFIG.redis.prefixweb,
             ttl: GLOBAL_CONFIG.redis.ttl
         }), // connect-mongo session store
-        secret: GLOBAL_CONFIG.app.secret,
+        secret: GLOBAL_CONFIG.app.secret
     };
-
     app.use(session(sessionOpts));
-    app.use(bodyParser.urlencoded({
-        extended: true,
-        limit: '50mb'
-    }));
+    app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
     app.use(passport.initialize());
     app.use(passport.session({
         maxAge: new Date(Date.now() + 3600000)
     }));
     app.use(cookieParser(GLOBAL_CONFIG.app.secret));
-    app.use(require('morgan')({
-        'stream': logger.stream
-    }));
+    app.use(require('morgan')({'stream': logger.stream}));
     logger.transports.file.level = 'verbose';
+    app.locals.menu_aceess = function() {
+        global.library.ASYNC.parallel({})
+    }
     app.locals.public_access = GLOBAL_CONFIG.public;
     app.use(function(req, res, next) {
         if (req.user) {
@@ -76,7 +76,7 @@ module.exports = function(app, express, passport, path) {
                 title: err.status,
                 message: err.message,
                 error: err,
-                state: 'err',
+                state: 'err'
             });
         });
     }
@@ -87,12 +87,16 @@ module.exports = function(app, express, passport, path) {
             title: err.status,
             message: err.message,
             error: err,
-            state: 'err',
+            state: 'err'
         });
     });
-    app.locals.youtubeThumbnail = function(string){
-      var youtubeId = string.split('v=')[1]
-      return "https://img.youtube.com/vi/"+youtubeId+"/0.jpg"
+    app.locals.youtubeThumbnail = function(string) {
+        var youtubeId = string.split('v=')[1]
+        return "https://img.youtube.com/vi/" + youtubeId + "/0.jpg"
+    }
+    app.locals.youtubeId = function(string){
+        var youtubeId = string.split('v=')[1];
+        return youtubeId;
     }
     app.locals.thousandSeparatorOnly = function(nStr) {
         return number_format(nStr, 0, '', '.');
@@ -102,15 +106,21 @@ module.exports = function(app, express, passport, path) {
     };
     app.locals.isActive = function(strMenu, strState, strReturn) {
         //console.log('strState');
-        if (typeof strReturn === 'undefined') strReturn = 'active';
-        return (strMenu.indexOf(strState) >= 0) ? strReturn : '';
+        if (typeof strReturn === 'undefined')
+            strReturn = 'active';
+        return (strMenu.indexOf(strState) >= 0)
+            ? strReturn
+            : '';
         // return (strMenu.indexOf(strState));
     };
     app.locals.imgTransform = function(url, transform) {
-        transform = transform == null ? 'h_100,q_60,c_fit' : transform;
+        transform = transform == null
+            ? 'h_100,q_60,c_fit'
+            : transform;
         var pattern = /upload/i;
         var newPattern = 'upload/' + transform;
-        if (url !== '') url = url.replace(pattern, newPattern);
+        if (url !== '')
+            url = url.replace(pattern, newPattern);
         return url.replace('http', 'https');
     };
     app.locals.formatDate = function(date) {
@@ -137,16 +147,26 @@ module.exports = function(app, express, passport, path) {
 
 function number_format(number, decimals, dec_point, thousands_sep) {
     // http://kevin.vanzonneveld.net
-    var n = !isFinite(+number) ? 0 : +number,
-        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+    var n = !isFinite(+ number)
+            ? 0
+            : + number,
+        prec = !isFinite(+ decimals)
+            ? 0
+            : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined')
+            ? ','
+            : thousands_sep,
+        dec = (typeof dec_point === 'undefined')
+            ? '.'
+            : dec_point,
         toFixedFix = function(n, prec) {
             // Fix for IE parseFloat(0.55).toFixed(0) = 0;
             var k = Math.pow(10, prec);
             return Math.round(n * k) / k;
         },
-        s = (prec ? toFixedFix(n, prec) : Math.round(n)).toString().split('.');
+        s = (prec
+            ? toFixedFix(n, prec)
+            : Math.round(n)).toString().split('.');
     if (s[0].length > 3) {
         s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
     }

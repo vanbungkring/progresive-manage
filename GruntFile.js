@@ -11,8 +11,12 @@ module.exports = function(grunt) {
                         'public/backend/css/custom/index.css',
                     ],
                     'public/front/css/app.front.min.css':[
-                        'public/front/css/index.css',
-                        'public/front/css/front.custom.css',
+                        'public/front/css/color.css',
+                        'public/front/css/font-awesome.css',
+                          'public/front/css/responsive.css',
+                            'public/front/css/slick-theme.css',
+                              'public/front/css/slick.css',
+                                'public/front/css/style.css',
                     ]
                 }
             },

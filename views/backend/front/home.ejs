@@ -1,8 +1,9 @@
-  <% data.data.forEach(function(campaign){ %>
+  <!-- <% data.data.forEach(function(campaign){ %>
     <div class="card">
 
         <img src=<%=youtubeThumbnail(campaign.postMeta.videoUrl)%> alt="><%=campaign.postMeta.title%>">
         <p class="card-text"><%=campaign.postMeta.title%></p>
           <a href="/content/video/<%=campaign.postMeta.slug%>" class="btn btn-primary">Detail Video</a>
     </div>
-  <%});%>
+  <%});%> -->
+  <% include ../partials/front/featured.ejs %>

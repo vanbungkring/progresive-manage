@@ -517,6 +517,29 @@ var jp_config = {
                 error: function(jqXhr, textStatus, errorThrown) {}
             });
         }
+        if ($('#authorSelect').length > 0) {
+            $.ajax({
+                url: '/api/v1/author',
+                dataType: 'json',
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(public_access.user + ":" + public_access.secret));
+                },
+                type: 'post',
+                cache: false,
+                processData: true,
+                success: function(result, textStatus, jQxhr) {
+                    // console.log(result);
+                    $.each(result.data, function(index, value) {
+                        var selectMe = (result.data[index]._id == selectedCat)
+                            ? 'selected'
+                            : '';
+                        // console.log(selectMe);
+                        $('#authorSelect').append('<option ' + selectMe + ' value="' + result.data[index]._id + '">' + result.data[index].name + '</option>');
+                    });
+                },
+                error: function(jqXhr, textStatus, errorThrown) {}
+            });
+        }
         if ($('#donationCategory').length > 0) {
             $.ajax({
                 url: '/api/v1/payment/category',

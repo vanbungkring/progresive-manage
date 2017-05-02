@@ -118,7 +118,7 @@ var frontController = {
         campaignVM.findCampaign(construct, function(result) {
             return res.render('backend/front/detail', {
                 layout: 'backend/layout/front',
-                title: 'Akun Bank',
+                title: result.data.postMeta.title,
                 data: result
             });
         });

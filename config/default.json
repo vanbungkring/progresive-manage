@@ -43,7 +43,7 @@
         "db": "lumen-dev",
         "password": "",
         "username": "",
-        "fullPath": "mongodb://db.vastheart.com:3000/progresif-tv-dev"
+        "fullPath": "mongodb://progresif:merdeka123@ds133321.mlab.com:33321/progresif-tv-dev"
     },
     "cloudinary": {
         "name": "dnauqnag6",

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="tab-content">
             <div class="blog-page">
-
+              <div class="video-grid__container"><h2 class="video-grid__title">VIDEO PILIHAN</h2></div>
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="row">
@@ -17,11 +17,10 @@
 
 
                                         </div>
-                                        <div class="image-content background-color-white text-center">
+                                        <div class="image-content background-color-white">
+                                            <p class="title-main"><a href="/content/video/<%=campaign.postMeta.slug%>"><%=excerpt(campaign.postMeta.title,30)%></a></p>
+                                            <p class="margin-bottom-0"><%=campaign.author.name%></p>
                                             <div class="banner-category"><a href="#" class="cat"><%=campaign.campaignCategory.name%></a></div>
-
-                                            <h3><a href="/content/video/<%=campaign.postMeta.slug%>"><%=excerpt(campaign.postMeta.title,20)%></a></h3>
-                                            <p class="margin-bottom-0"> <span><%=campaign.author.name%></span> </p>
 
                                         </div>
                                     </div>
@@ -36,15 +35,8 @@
                     <!-- /Slide1 -->
 
                 </div>
-
-
-
             </div>
             <!-- /#myCarousel -->
-
-
-
-
         </div>
 
     </div>

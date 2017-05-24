@@ -13,10 +13,10 @@ module.exports = function(grunt) {
                     'public/front/css/app.front.min.css':[
                         'public/front/css/color.css',
                         'public/front/css/font-awesome.css',
-                          'public/front/css/responsive.css',
-                            'public/front/css/slick-theme.css',
-                              'public/front/css/slick.css',
-                                'public/front/css/style.css',
+                        'public/front/css/responsive.css',
+                        'public/front/css/slick-theme.css',
+                        'public/front/css/slick.css',
+                        'public/front/css/style.css',
                     ]
                 }
             },
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                 tasks: ['concat:js'],
             },
             stylesheets: {
-                files: ['public/backend/css/**/*.css'],
+                files: ['public/front/css/*.css'],
                 tasks: ['cssmin:target']
             }
         },
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default',
     [
       'imagemin',
-      'cssmin:target',
+      'cssmin',
       'concat:js',
       'watch',
       'uglify',

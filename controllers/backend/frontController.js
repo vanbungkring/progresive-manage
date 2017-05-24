@@ -34,9 +34,7 @@ var frontController = {
         ];
         var cacheKey = global.library.CACHE_STATUS.PREFS_CACHE_CAMPAIGN;
         var construct = {};
-        var perPage = req.body.perpage
-            ? parseInt(req.body.perpage)
-            : 10;
+        var perPage = 8;
 
         page = parseInt(req.body.page) - 1 > 0
             ? parseInt(req.body.page) - 1
@@ -80,6 +78,7 @@ var frontController = {
                 res.render('backend/front/home', {
                     layout: 'backend/layout/front',
                     title: 'Serambi',
+                    seo:false,
                     data: queryResult
                 });
 
@@ -119,6 +118,7 @@ var frontController = {
             return res.render('backend/front/detail', {
                 layout: 'backend/layout/front',
                 title: result.data.postMeta.title,
+                seo:true,
                 data: result
             });
         });

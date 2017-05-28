@@ -7,6 +7,7 @@ var logger = require('./logger');
 var numeral = require('numeral');
 var moment = require('moment');
 var flash = require('connect-flash');
+const frontVM = require(GLOBAL_PATH + '/viewModel/frontPageVM.js');
 
 module.exports = function(app, express, passport, path) {
     require(GLOBAL_PATH + '/helper/passport')(passport); // pass passport for configuration
@@ -22,8 +23,9 @@ module.exports = function(app, express, passport, path) {
     app.locals.sanitizeSpace = function(parameters) {
         return parameters.split(' ').join('_').toLowerCase();
     };
-    app.locals.excerpt = function(string,limit){
-      return string.substring(0,parseInt(limit))
+
+    app.locals.excerpt = function(string, limit) {
+        return string.substring(0, parseInt(limit))
     }
     app.locals.numeral = global.library.NUMERAL;
     app.locals.PREFIX_ROUTE_BACK_OFFICE = global.PREFIX_ROUTE_BACK_OFFICE;
@@ -94,7 +96,7 @@ module.exports = function(app, express, passport, path) {
         var youtubeId = string.split('v=')[1]
         return "https://img.youtube.com/vi/" + youtubeId + "/0.jpg"
     }
-    app.locals.youtubeId = function(string){
+    app.locals.youtubeId = function(string) {
         var youtubeId = string.split('v=')[1];
         return youtubeId;
     }
@@ -106,7 +108,7 @@ module.exports = function(app, express, passport, path) {
     };
     app.locals.isActive = function(strMenu, strState, strReturn) {
         //console.log('strState');
-        if (typeof strReturn === 'undefined')
+        if (typeof strReturn === 'undefined') 
             strReturn = 'active';
         return (strMenu.indexOf(strState) >= 0)
             ? strReturn
@@ -119,7 +121,7 @@ module.exports = function(app, express, passport, path) {
             : transform;
         var pattern = /upload/i;
         var newPattern = 'upload/' + transform;
-        if (url !== '')
+        if (url !== '') 
             url = url.replace(pattern, newPattern);
         return url.replace('http', 'https');
     };

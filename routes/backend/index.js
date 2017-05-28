@@ -1,3 +1,4 @@
+
 var controllers = require(GLOBAL_PATH + '/controllers/backend/index');
 var Agendash = require('agendash');
 module.exports = function(app, passport) {

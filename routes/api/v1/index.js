@@ -24,7 +24,7 @@ module.exports = function(app, auth) {
   app
     .post('/v1/submerchant', auth, controllers.APIMerchantController.index);
   app
-    .post('/v1/categories', auth, controllers.APICategoriesController.index)
+    .post('/v1/categories', controllers.APICategoriesController.index)
     .post('/v1/categories/slug/', auth, controllers.APICategoriesController.findBySlug);
     app
       .post('/v1/author', auth, controllers.APIAuthorController.index)

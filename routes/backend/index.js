@@ -4,7 +4,8 @@ var Agendash = require('agendash');
 module.exports = function(app, passport) {
     app
       .get('/',controllers.frontController.home)
-      .get('/content/video/:id',controllers.frontController.findBySlugg);
+      .get('/content/video/:id',controllers.frontController.findBySlugg)
+      .get('/channel/categories/:id',controllers.frontController.findByCategory);
     app
         .get('/login', isLoggedIn, controllers.authController.login)
         .post('/login', isLoggedIn, passport.authenticate('local-login', {

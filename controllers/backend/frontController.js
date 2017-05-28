@@ -2,30 +2,39 @@ const campaignVM = require(GLOBAL_PATH + '/viewModel/campaignVM.js');
 const frontVM = require(GLOBAL_PATH + '/viewModel/frontPageVM.js');
 var frontController = {
     home: function(req, res) {
-      var context  = {}
-      getFront({},function(result){
-        res.render('backend/front/home', {
-            layout: 'backend/layout/front',
-            title: 'Serambi',
-            seo:false,
-            data: result
-        });
-        res.json(result);
-      })
+        var context = {}
+        getFront({}, function(result) {
+            res.render('backend/front/home', {
+                layout: 'backend/layout/front',
+                title: 'Serambi',
+                seo: false,
+                data: result
+            });
+        })
     },
-    findByCategory:function(req,res){
-
+    findByCategory: function(req, res) {
+      console.log(req.params);
+      var context = {};
+      context.category = req.params.id;
+        getFront(context, function(result) {
+            res.render('backend/front/categories', {
+                layout: 'backend/layout/front',
+                title: 'Serambi',
+                seo: false,
+                data: result
+            });
+        })
     },
     findBySlugg: function(req, res) {
-      console.log(req.param);
+        console.log(req.param);
         var populate = [
             {
                 path: 'campaignCategory',
                 select: 'name _id'
-            },  {
-                  path: 'author',
-                  select: 'name _id'
-              }, {
+            }, {
+                path: 'author',
+                select: 'name _id'
+            }, {
                 path: 'writer',
                 select: '_id firstName lastName'
             }, {
@@ -48,80 +57,81 @@ var frontController = {
             return res.render('backend/front/detail', {
                 layout: 'backend/layout/front',
                 title: result.data.postMeta.title,
-                seo:true,
+                seo: true,
                 data: result
             });
         });
     }
 }
-function getFront(context,callback){
-  var populate = [
-      {
-          path: 'campaignCategory',
-          select: 'name _id'
-      },
-      {
-          path: 'author',
-          select: 'name _id'
-      }, {
-          path: 'writer',
-          select: '_id firstName lastName'
-      }, {
-          path: 'paymentReceive',
-          select: 'transactionContext.payment createdAt',
-          options: {
-              sort: {
-                  'createdAt': -1
-              }
-          },
-          populate: {
-              path: 'transactionContext.payment',
-              model: 'payment',
-              select: 'transactionContext.totalAmount userContext.anonymous userContext.donor userContext.remarks',
-              populate: {
-                  path: 'userContext.donor',
-                  model: 'donor',
-                  select: 'name avatar'
-              }
-          }
-      }
-  ];
-  var cacheKey = global.library.CACHE_STATUS.PREFS_CACHE_CAMPAIGN;
-  var construct = {};
-  var perPage = 8;
+function getFront(context, callback) {
+    var populate = [
+        {
+            path: 'campaignCategory',
+            select: 'name _id'
+        }, {
+            path: 'author',
+            select: 'name _id'
+        }, {
+            path: 'writer',
+            select: '_id firstName lastName'
+        }, {
+            path: 'paymentReceive',
+            select: 'transactionContext.payment createdAt',
+            options: {
+                sort: {
+                    'createdAt': -1
+                }
+            },
+            populate: {
+                path: 'transactionContext.payment',
+                model: 'payment',
+                select: 'transactionContext.totalAmount userContext.anonymous userContext.donor userContext.remarks',
+                populate: {
+                    path: 'userContext.donor',
+                    model: 'donor',
+                    select: 'name avatar'
+                }
+            }
+        }
+    ];
+    var cacheKey = global.library.CACHE_STATUS.PREFS_CACHE_CAMPAIGN;
+    var construct = {};
+    var perPage = context.perpage
+        ? context.perpage
+        : 100;
 
-  page = parseInt(context.page) - 1 > 0
-      ? parseInt(context.page) - 1
-      : 0;
-  construct.queryParameters = {};
-  if (context.perpage != undefined) {
-      cacheKey += 'PERPAGE_' + context.perpage + '_';
-  }
-  cacheKey += 'PAGE_' + page + '_';
-  construct.queryParameters.publishedStatus = 1;
-  if (context.category) {
-      construct.queryParameters.campaignCategory = global.library.MONGOOOSE.Types.ObjectId(context.category);
-      cacheKey += 'CATEGORY_' + context.category + '_';
-  }
+    page = parseInt(context.page) - 1 > 0
+        ? parseInt(context.page) - 1
+        : 0;
+    construct.queryParameters = {};
+    if (context.perpage != undefined) {
+        cacheKey += 'PERPAGE_' + context.perpage + '_';
+    }
+    cacheKey += 'PAGE_' + page + '_';
+    construct.queryParameters.publishedStatus = 1;
+    if (context.category) {
+        construct.queryParameters.campaignCategory = global.library.MONGOOOSE.Types.ObjectId(context.category);
+        cacheKey += 'CATEGORY_' + context.category + '_';
+    }
 
-  construct.perPage = perPage;
-  construct.populate = populate;
-  construct.featured = true;
-  construct.page = page;
-  construct.deepPopulate = 'merchant';
-  construct.filter = ' -postMeta.tag  -__v -publishedStatus -updatedAt';
-  global.library.CACHE_MANAGER.readFromCache(cacheKey, function(result) {
-      if (result != null) {
-        callback(result);
-      }
-      campaignVM.getAllCampaign(construct, '-password', function(queryResult) {
-          if (queryResult.data) {
-              global.library.CACHE_MANAGER.storeCache(cacheKey, queryResult, {});
-          }
-          callback(queryResult);
+    construct.perPage = perPage;
+    construct.populate = populate;
+    construct.featured = true;
+    construct.page = page;
+    construct.deepPopulate = 'merchant';
+    construct.filter = ' -postMeta.tag  -__v -publishedStatus -updatedAt';
+    global.library.CACHE_MANAGER.readFromCache(cacheKey, function(result) {
+        if (result != null) {
+            callback(result);
+        }
+        campaignVM.getAllCampaign(construct, '-password', function(queryResult) {
+            if (queryResult.data) {
+                global.library.CACHE_MANAGER.storeCache(cacheKey, queryResult, {});
+            }
+            callback(queryResult);
 
-      });
-  });
+        });
+    });
 
 }
 

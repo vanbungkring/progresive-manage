@@ -3,7 +3,8 @@ const frontVM = require(GLOBAL_PATH + '/viewModel/frontPageVM.js');
 var frontController = {
     home: function(req, res) {
         var context = {}
-        getFront({}, function(result) {
+        context.perpage = 8;
+        frontVM.getSpecificCategory(context, function(result) {
             res.render('backend/front/home', {
                 layout: 'backend/layout/front',
                 title: 'Serambi',
@@ -13,9 +14,9 @@ var frontController = {
         })
     },
     findByCategory: function(req, res) {
-      console.log(req.params);
-      var context = {};
-      context.category = req.params.id;
+        console.log(req.params);
+        var context = {};
+        context.category = req.params.id;
         getFront(context, function(result) {
             res.render('backend/front/categories', {
                 layout: 'backend/layout/front',

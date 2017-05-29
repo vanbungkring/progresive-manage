@@ -18,9 +18,13 @@ var frontController = {
         var context = {};
         context.category = req.params.id;
         getFront(context, function(result) {
+          var title = '';
+          if (result && result.data.length) {
+            title = result.data[0].campaignCategory.name;
+          }
             res.render('backend/front/categories', {
                 layout: 'backend/layout/front',
-                title: 'Serambi',
+                title: title,
                 seo: false,
                 data: result
             });
